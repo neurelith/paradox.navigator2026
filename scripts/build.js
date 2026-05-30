@@ -30,8 +30,7 @@ const filesToCopy = [
   'app.js',
   'manifest.json',
   'sw.js',
-  'paradox_2026_event_tracker.html',
-  'app-debug.apk'
+  'paradox_2026_event_tracker.html'
 ];
 
 filesToCopy.forEach(file => {
@@ -40,6 +39,16 @@ filesToCopy.forEach(file => {
     console.log(`Copied ${file} to www/`);
   }
 });
+
+// 2.5 Copy compiled Android APK if it exists in native outputs
+const apkSourcePath = path.join('android', 'app', 'build', 'outputs', 'apk', 'debug', 'app-debug.apk');
+const apkDestPath = path.join('www', 'app-debug.apk');
+if (fs.existsSync(apkSourcePath)) {
+  fs.copyFileSync(apkSourcePath, apkDestPath);
+  console.log('Copied compiled Android APK to www/');
+} else {
+  console.log('Android APK build artifact not found in native outputs yet; skipping copy.');
+}
 
 // 3. Copy img folder
 if (fs.existsSync('img')) {
