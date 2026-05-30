@@ -8,9 +8,19 @@ The application implements a custom Google Material Design 3 (M3) design system,
 
 ## 🚀 Getting Started
 
-The application is deployed as a fully portable, zero-dependency, self-contained single-file mobile web app.
+### 📱 Option A: Direct Android App Installation (Recommended for Mobile)
 
-### Option A: Local Web Server (Recommended)
+You can install the native Android app directly onto your device:
+
+1. **Download the APK**: Download the compiled package ZIP from [GitHub Build Artifacts](https://github.com/neurelith/paradox.navigator2026/actions/runs/26697907543/artifacts/7312202683).
+   *(Note: You must be logged into the owning GitHub account `neurelith` to access this private repository download link).*
+2. **Extract & Open**: Extract the downloaded ZIP folder to get the `app-debug.apk` file, then open/run it on your Android device.
+3. **Allow Installation**: If prompted with a security warning, tap **Settings** and enable **Allow from this source** for your browser or file manager.
+4. **Bypass Protection**: When Google Play Protect warns about an "Unsafe App" (due to it being a debug-signed build), tap **More details** ➔ **Install anyway**.
+
+---
+
+### Option B: Local Web Server (Recommended for Web)
 Running the app via a local server ensures correct iframe loading and prevents local file access policy warnings.
 1. Open a terminal in the project directory.
 2. Start the local server:
@@ -19,7 +29,7 @@ Running the app via a local server ensures correct iframe loading and prevents l
    ```
 3. Open your browser and navigate to: **[http://localhost:8000](http://localhost:8000)**
 
-### Option B: Direct File Loading
+### Option C: Direct File Loading
 Open [index.html](index.html) or [paradox_2026_event_tracker.html](paradox_2026_event_tracker.html) directly in any modern mobile or desktop web browser.
 
 ---
