@@ -1,0 +1,6 @@
+{
+  "appId": "com.paradox.guide",
+  "appName": "Paradox Navigator",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

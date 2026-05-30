@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Paradox Navigator</string>
+    <string name="title_activity_main">Paradox Navigator</string>
+    <string name="package_name">com.paradox.guide</string>
+    <string name="custom_url_scheme">com.paradox.guide</string>
+</resources>
