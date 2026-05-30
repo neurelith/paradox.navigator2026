@@ -15,6 +15,7 @@ const PRECACHE_ASSETS = [
   './index.html',
   './style.css',
   './app.js',
+  './src/data/paradoxStore.json',
 ];
 
 // Install: Pre-cache core assets

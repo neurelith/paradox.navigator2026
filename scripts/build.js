@@ -47,4 +47,10 @@ if (fs.existsSync('img')) {
   console.log('Copied img/ directory to www/img');
 }
 
+// 4. Copy src folder (contains JSON store)
+if (fs.existsSync('src')) {
+  copyDir('src', 'www/src');
+  console.log('Copied src/ directory to www/src');
+}
+
 console.log('Build completed successfully!');

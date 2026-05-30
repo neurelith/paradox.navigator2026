@@ -76,13 +76,19 @@ $$\Delta d = \sqrt{(X_2 - X_1)^2 + (Y_2 - Y_1)^2}$$
 
 ```
 PAARDOXGUIDE/
-├── index.html                       # Primary consolidated HTML application
-├── paradox_2026_event_tracker.html  # Identical portably-mirrored backup HTML
-├── style.css                        # Deprecated (redirecting comments only)
-├── app.js                           # Deprecated (redirecting comments only)
+├── index.html                       # Main HTML application page linking to style.css and app.js
+├── paradox_2026_event_tracker.html  # Portable, mirrored backup HTML file
+├── style.css                        # Core application stylesheet (Material Design 3 visual tokens)
+├── app.js                           # Frontend controller, view router, and PWA registration logic
+├── package.json                     # Node project metadata and dependencies (Capacitor core/cli/android)
+├── capacitor.config.json            # Capacitor Android deployment configuration
+├── sw.js                            # PWA Service Worker implementing offline caching
+├── scripts/
+│   ├── build.js                     # Production web bundler copying assets to www/
+│   └── optimize-images.js           # WebP image batch compression pipeline
 └── src/
     └── data/
         └── paradoxStore.json        # Static JSON database registry of events and coordinates
 ```
 
-* **Consolidated Deployment:** To support complete portability, performance, and offline responsiveness, all CSS styles, HTML5 semantic structures, SVG icons, and JavaScript state logic are compiled directly inside [index.html](index.html).
+* **Modular Deployment:** The application is organized in a modular structure to support clean development, native Capacitor Android compilation, PWA service worker caching, and asynchronous loading of the events database during startup.
