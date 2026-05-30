@@ -1,5 +1,5 @@
 /**
- * Paradox Guide — Image Optimizer
+ * Paradox Navigator — Image Optimizer
  * Converts event cover photos to compressed WebP thumbnails.
  * 
  * Usage: node scripts/optimize-images.js
@@ -61,7 +61,7 @@ async function optimizeImage(inputPath, outputPath) {
 
 async function main() {
   console.log('╔══════════════════════════════════════════════╗');
-  console.log('║  Paradox Guide — Image Optimizer             ║');
+  console.log('║  Paradox Navigator — Image Optimizer         ║');
   console.log('╚══════════════════════════════════════════════╝\n');
 
   let totalInput = 0;

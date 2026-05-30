@@ -1,6 +1,6 @@
 {
-  "name": "paradox-guide",
-  "version": "2.1.0",
+  "name": "paradox-navigator",
+  "version": "2.2.0",
   "scripts": {
     "build": "node scripts/build.js"
   },

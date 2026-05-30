@@ -1,5 +1,5 @@
 /**
- * Paradox Guide — Service Worker
+ * Paradox Navigator — Service Worker
  * Provides offline caching for the PWA experience.
  * 
  * Strategy:
@@ -7,7 +7,7 @@
  *  - NETWORK_FIRST for HTML (to pick up event data updates)
  */
 
-const CACHE_NAME = 'paradox-guide-v2.1';
+const CACHE_NAME = 'paradox-navigator-v2.2';
 
 // Core assets to pre-cache on install
 const PRECACHE_ASSETS = [
@@ -122,7 +122,7 @@ async function networkFirst(request) {
       return cachedResponse;
     }
     return new Response(
-      '<!DOCTYPE html><html><body style="font-family:sans-serif;text-align:center;padding:60px"><h2>📡 You are offline</h2><p>Paradox Guide could not load. Please check your connection and try again.</p></body></html>',
+      '<!DOCTYPE html><html><body style="font-family:sans-serif;text-align:center;padding:60px"><h2>📡 You are offline</h2><p>Paradox Navigator could not load. Please check your connection and try again.</p></body></html>',
       {
         headers: { 'Content-Type': 'text/html' },
         status: 503,

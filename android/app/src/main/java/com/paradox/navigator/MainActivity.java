@@ -1,4 +1,4 @@
-package com.paradox.guide;
+package com.paradox.navigator;
 
 import com.getcapacitor.BridgeActivity;
 
