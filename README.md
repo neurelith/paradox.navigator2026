@@ -12,7 +12,7 @@ The application is deployed as a fully portable, zero-dependency, self-contained
 
 ### Option A: Local Web Server (Recommended)
 Running the app via a local server ensures correct iframe loading and prevents local file access policy warnings.
-1. Open a terminal in the project directory: `c:\Users\sujoy\Downloads\PAARDOXGUIDE`
+1. Open a terminal in the project directory.
 2. Start the local server:
    ```bash
    python -m http.server 8000
@@ -20,7 +20,7 @@ Running the app via a local server ensures correct iframe loading and prevents l
 3. Open your browser and navigate to: **[http://localhost:8000](http://localhost:8000)**
 
 ### Option B: Direct File Loading
-Open [index.html](file:///c:/Users/sujoy/Downloads/PAARDOXGUIDE/index.html) or [paradox_2026_event_tracker.html](file:///c:/Users/sujoy/Downloads/PAARDOXGUIDE/paradox_2026_event_tracker.html) directly in any modern mobile or desktop web browser.
+Open [index.html](index.html) or [paradox_2026_event_tracker.html](paradox_2026_event_tracker.html) directly in any modern mobile or desktop web browser.
 
 ---
 
@@ -85,4 +85,4 @@ PAARDOXGUIDE/
         └── paradoxStore.json        # Static JSON database registry of events and coordinates
 ```
 
-* **Consolidated Deployment:** To support complete portability, performance, and offline responsiveness, all CSS styles, HTML5 semantic structures, SVG icons, and JavaScript state logic are compiled directly inside [index.html](file:///c:/Users/sujoy/Downloads/PAARDOXGUIDE/index.html).
+* **Consolidated Deployment:** To support complete portability, performance, and offline responsiveness, all CSS styles, HTML5 semantic structures, SVG icons, and JavaScript state logic are compiled directly inside [index.html](index.html).
