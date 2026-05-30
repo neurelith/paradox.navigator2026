@@ -16,6 +16,10 @@ const PRECACHE_ASSETS = [
   './style.css',
   './app.js',
   './src/data/paradoxStore.json',
+  './css/tabler-icons.min.css',
+  './css/fonts/tabler-icons.woff2',
+  './css/fonts/tabler-icons.woff',
+  './css/fonts/tabler-icons.ttf',
 ];
 
 // Install: Pre-cache core assets

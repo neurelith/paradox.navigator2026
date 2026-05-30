@@ -53,4 +53,10 @@ if (fs.existsSync('src')) {
   console.log('Copied src/ directory to www/src');
 }
 
+// 5. Copy css folder (contains local Tabler Icons CSS & fonts)
+if (fs.existsSync('css')) {
+  copyDir('css', 'www/css');
+  console.log('Copied css/ directory to www/css');
+}
+
 console.log('Build completed successfully!');
