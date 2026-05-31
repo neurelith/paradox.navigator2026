@@ -1757,31 +1757,31 @@ body[data-theme="dark"] .toast-msg.conflict {
 .svg-map:active { cursor: grabbing; }
 
 .map-forest {
-  fill: #E3EDE0;
+  fill: #e4ede2;
   transition: fill 0.35s ease;
 }
-body[data-theme="dark"] .map-forest { fill: #1E351F; }
+body[data-theme="dark"] .map-forest { fill: #132014; }
 
 .map-lake {
-  fill: #DBE6EC;
-  stroke: #C9D9E1;
+  fill: #e2ebf0;
+  stroke: #cbd5df;
   stroke-width: 1.5px;
   transition: fill 0.35s ease, stroke 0.35s ease;
 }
 body[data-theme="dark"] .map-lake {
-  fill: #1A242E;
-  stroke: #263543;
+  fill: #101720;
+  stroke: #1e293b;
 }
 
 .map-road-bg {
-  stroke: #E4DFD5;
+  stroke: #eae6df;
   stroke-width: 6px;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
   transition: stroke var(--transition-fluid);
 }
-body[data-theme="dark"] .map-road-bg { stroke: #2C2620; }
+body[data-theme="dark"] .map-road-bg { stroke: #1a1613; }
 
 .map-road-lane {
   stroke: #FFFFFF;
@@ -1792,7 +1792,7 @@ body[data-theme="dark"] .map-road-bg { stroke: #2C2620; }
   fill: none;
   transition: stroke var(--transition-fluid);
 }
-body[data-theme="dark"] .map-road-lane { stroke: rgba(255, 255, 255, 0.15); }
+body[data-theme="dark"] .map-road-lane { stroke: rgba(255, 255, 255, 0.08); }
 
 #svg-transit-line {
   stroke: var(--red);
@@ -2596,7 +2596,7 @@ body[data-theme="dark"] .add-to-watchlist-btn.watched {
 
 .details-cover-container {
   width: 100%;
-  max-height: 200px;
+  aspect-ratio: 3 / 4;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 12px;
@@ -2608,11 +2608,9 @@ body[data-theme="dark"] .add-to-watchlist-btn.watched {
   justify-content: center;
 }
 .details-cover-img {
-  max-width: 100%;
-  max-height: 200px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 

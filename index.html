@@ -52,7 +52,7 @@
   <!-- discover view -->
   <div id="view-discover" class="view-section visible">
     <!-- live now ticker -->
-    <div class="now-next-banner" id="ticker-strip" style="display: flex;">
+    <div class="now-next-banner" id="ticker-strip" style="display: none;">
       <div class="live-now-badge">LIVE NOW</div>
       <div class="now-next-divider"></div>
       <div class="now-next-content" id="ticker-content-list">
@@ -90,6 +90,7 @@
     <div class="day-tabs" id="discover-day-tabs" role="tablist" style="padding-bottom: 20px;">
       <!-- populated dynamically -->
     </div>
+    <div class="events-list" id="discover-day-events" style="margin: 0 16px 20px; padding-bottom: 20px;"></div>
   </div>
 
   <!-- schedule view -->
@@ -154,7 +155,7 @@
   <div id="view-profile" class="view-section">
 
     <div class="profile-card glass-card">
-      <img class="profile-avatar" src="img/events/culturals/mr-and-ms-paradox.webp" alt="Alex Mercer" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><circle cx=%2240%22 cy=%2240%22 r=%2240%22 fill=%22%23e8dfc8%22/><text x=%2240%22 y=%2248%22 font-family=%22sans-serif%22 font-size=%2224%22 text-anchor=%22middle%22 fill=%22%234a3f28%22>AM</text></svg>';">
+      <img class="profile-avatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238a7a60'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" alt="Alex Mercer" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><circle cx=%2240%22 cy=%2240%22 r=%2240%22 fill=%22%23e8dfc8%22/><text x=%2240%22 y=%2248%22 font-family=%22sans-serif%22 font-size=%2224%22 text-anchor=%22middle%22 fill=%22%234a3f28%22>AM</text></svg>';">
       <h2 class="profile-name" id="profile-display-name">Alex Mercer</h2>
       <div class="profile-role" id="profile-display-role">Senior Data Architect</div>
       
@@ -879,7 +880,7 @@
   </div>
 
 
-  <script src="app.js?v=2.3" defer></script>
+  <script src="app.js?v=3.0" defer></script>
   <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').then(() => console.log('[SW] Registered')).catch(e => console.warn('[SW] Registration failed:', e)); }</script>
   
 
