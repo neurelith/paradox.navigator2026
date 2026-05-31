@@ -1429,7 +1429,7 @@ body[data-theme="dark"] .bottom-nav.light-nav .nav-item.active::after {
   margin-left: 6px;
 }
 .time-slot-group.collapsed .time-slot-header-left .time-slot-badge-count {
-  display: inline-block !important;
+  display: inline-block;
 }
 
 
@@ -2830,7 +2830,7 @@ textarea:focus-visible,
 .day-tab:focus-visible,
 .track-tab:focus-visible,
 .nav-item:focus-visible {
-  outline: 1.5px solid var(--border-focus) !important;
+  outline: 1.5px solid var(--border-focus);
   outline-offset: 2px;
 }
 

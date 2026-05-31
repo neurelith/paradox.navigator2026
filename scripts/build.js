@@ -28,8 +28,7 @@ const filesToCopy = [
   'style.css',
   'app.js',
   'manifest.json',
-  'sw.js',
-  'paradox_2026_event_tracker.html'
+  'sw.js'
 ];
 
 filesToCopy.forEach(file => {
