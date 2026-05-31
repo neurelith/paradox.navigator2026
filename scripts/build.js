@@ -39,11 +39,11 @@ filesToCopy.forEach(file => {
 });
 
 // 2.5 Copy compiled Android APK if it exists in native outputs
-const apkSourcePath = path.join('android', 'app', 'build', 'outputs', 'apk', 'debug', 'app-debug.apk');
-const apkDestPath = path.join('www', 'app-debug.apk');
+const apkSourcePath = path.join('android', 'app', 'build', 'outputs', 'apk', 'debug', 'ParadoxNavigator.apk');
+const apkDestPath = path.join('www', 'ParadoxNavigator.apk');
 if (fs.existsSync(apkSourcePath)) {
   fs.copyFileSync(apkSourcePath, apkDestPath);
-  console.log('Copied compiled Android APK to www/');
+  console.log('Copied compiled Android APK to www/ as ParadoxNavigator.apk');
 } else {
   console.log('Android APK build artifact not found in native outputs yet; skipping copy.');
 }
