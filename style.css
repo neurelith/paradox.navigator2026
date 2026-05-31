@@ -138,6 +138,36 @@ body[data-theme="dark"] .ambient-glow {
   opacity: 0.12;
 }
 
+/* Geometric lattice background overlay utility styles */
+.absolute {
+  position: absolute;
+}
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.mix-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.lattice-overlay {
+  opacity: 0.02;
+  z-index: -1; /* behind all scroll containers and components */
+  background-repeat: repeat;
+  transition: opacity 0.35s ease;
+}
+
+body[data-theme="dark"] .lattice-overlay {
+  mix-blend-mode: plus-lighter;
+  opacity: 0.015;
+  filter: invert(1);
+}
+
 /* 1. HEADER */
 .header {
   padding: 22px 16px 14px;
@@ -632,6 +662,7 @@ body[data-theme="dark"] .event-card[data-cover].expanded::after  { opacity: 0.30
 .stat-num.teal { color: var(--teal); }
 .stat-num.amber { color: var(--amber); }
 .stat-num.red { color: var(--red); }
+.stat-num.primary { color: var(--primary); }
 .stat-label {
   font-size: 11px;
   color: var(--muted);
@@ -654,7 +685,8 @@ body[data-theme="dark"] .event-card[data-cover].expanded::after  { opacity: 0.30
   border-top: 1.5px solid var(--border);
   display: flex;
   align-items: center;
-  padding: 8px 10px 10px;
+  justify-content: space-around;
+  padding: 6px 4px 8px;
   z-index: 100;
   transition: border var(--transition-fluid);
   box-shadow: none;                /* No Shadows */
@@ -664,20 +696,22 @@ body[data-theme="dark"] .event-card[data-cover].expanded::after  { opacity: 0.30
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  padding: 6px 4px 4px;
+  gap: 2px;
+  padding: 4px 2px;
   cursor: pointer;
   color: var(--muted);
   transition: var(--transition-fluid);
-  font-size: 10px;
+  font-size: 9px;
   font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   position: relative;
+  min-width: 0;
+  text-align: center;
 }
 .nav-item i {
-  font-size: 21px;
+  font-size: 18px;
   transition: transform 0.2s;
 }
 @keyframes pillIn {
@@ -704,8 +738,8 @@ body[data-theme="dark"] .event-card[data-cover].expanded::after  { opacity: 0.30
   animation: pillIn 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 .nav-fab {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--primary);     /* Saffron Gold background */
   border: none;
@@ -713,9 +747,9 @@ body[data-theme="dark"] .event-card[data-cover].expanded::after  { opacity: 0.30
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 4px;
   flex-shrink: 0;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   transition: var(--transition-fluid);
   position: relative;
   z-index: 102;
@@ -725,13 +759,13 @@ body[data-theme="dark"] .event-card[data-cover].expanded::after  { opacity: 0.30
   transform: scale(1.08) translateY(-2px);
 }
 .nav-fab i {
-  font-size: 24px;
+  font-size: 20px;
   color: #ffffff;
 }
 .badge-nav-dot {
   position: absolute;
-  top: 4px;
-  right: 22px;
+  top: 2px;
+  left: 55%;
   width: 8px;
   height: 8px;
   background: var(--red);
@@ -2094,4 +2128,68 @@ body[data-theme="dark"] .pin-marker-cloud {
 }
 .map-ctrl-btn:active {
   transform: scale(0.95);
+}
+
+/* ==========================================================================
+   10. MINIMALIST TOAST NOTIFICATION STACK
+   ========================================================================== */
+#toast-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+  max-width: 320px;
+  width: calc(100% - 32px);
+}
+
+.toast-msg {
+  pointer-events: auto;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #1F2937;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.toast-msg.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Typed variations */
+.toast-msg.info {
+  border-color: #E5E7EB;
+  color: #374151;
+  background: #FFFFFF;
+}
+
+.toast-msg.warning, .toast-msg.conflict {
+  background: #FFF7ED;
+  border-color: #FED7AA;
+  color: #EA580C;
+}
+
+/* Dark mode overrides for toasts */
+body[data-theme="dark"] .toast-msg.info {
+  background: #2A241D;
+  border-color: #4A3F33;
+  color: #F5F0E8;
+}
+
+body[data-theme="dark"] .toast-msg.warning, 
+body[data-theme="dark"] .toast-msg.conflict {
+  background: #2D1A0F;
+  border-color: #7C2D12;
+  color: #FB923C;
 }

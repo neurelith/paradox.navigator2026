@@ -460,6 +460,11 @@
         <input type="checkbox" id="setting-simulate-time" onchange="updateSimulateTime(this.checked)" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary);">
       </div>
 
+      <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px; border-top: 1px dashed var(--border); padding-top: 12px;">
+        <label class="form-label" for="setting-browser-notifications" style="margin-bottom: 0;">🔔 Enable Browser Notifications</label>
+        <input type="checkbox" id="setting-browser-notifications" onchange="toggleBrowserNotifications(this.checked)" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary);">
+      </div>
+
       <div class="form-group">
         <label class="form-label">Maps Focus Zoom Offset</label>
         <div class="settings-slider-row">
@@ -560,7 +565,7 @@
   </div>
 
   <!-- Toast Notification Wrapper -->
-  <div id="toast-container"></div>
+  <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2 pointer-events-none max-w-xs w-full"></div>
 
   <!-- Undo Snackbar -->
   <div class="snackbar" id="undo-snackbar">

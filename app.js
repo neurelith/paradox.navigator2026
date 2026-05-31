@@ -187,10 +187,12 @@ let state = {
     mapZoom: 15,
     viewMode: "detail",
     simulateTime: false,
-    mapMode: "offline"
+    mapMode: "offline",
+    notificationsEnabled: false
   },
   hiddenEvents: [],
-  notes: {}
+  notes: {},
+  dismissedNotifications: []
 };
 
 // Load state from local storage cache
@@ -204,6 +206,7 @@ try {
     if (saved.settings) state.settings = { ...state.settings, ...saved.settings };
     if (saved.hiddenEvents) state.hiddenEvents = saved.hiddenEvents;
     if (saved.notes) state.notes = saved.notes;
+    if (saved.dismissedNotifications) state.dismissedNotifications = saved.dismissedNotifications;
   }
 } catch(e) {
   console.warn("Storage restore error:", e);
@@ -218,7 +221,8 @@ function saveState() {
       simulators: state.simulators,
       settings: state.settings,
       hiddenEvents: state.hiddenEvents,
-      notes: state.notes
+      notes: state.notes,
+      dismissedNotifications: state.dismissedNotifications
     }));
   } catch(e) {
     console.warn("Storage save error:", e);
@@ -768,15 +772,16 @@ function renderUI() {
 
   const transitWarningEl = document.getElementById("transit-warning");
   const hasTransitWarning = transitWarningEl && transitWarningEl.style.display === "flex";
-  const hasConflicts = state.conflicts.length > 0;
-  
-  const alertsSignature = `${outstanding}-${hasTransitWarning ? 'Y' : 'N'}-${state.conflicts.length}`;
+  const activeNotices = typeof getNotificationsList === "function" ? getNotificationsList() : [];
+  const hasUndismissedNotices = activeNotices.length > 0;
+
+  const alertsSignature = `${outstanding}-${hasTransitWarning ? 'Y' : 'N'}-${state.conflicts.length}-${activeNotices.map(n => n.id).join(",")}`;
   if (state.lastAlertsSignature !== alertsSignature) {
     state.notifBadgeCleared = false;
     state.lastAlertsSignature = alertsSignature;
   }
 
-  if ((outstanding > 0 || hasTransitWarning || hasConflicts) && !state.notifBadgeCleared) {
+  if (hasUndismissedNotices && !state.notifBadgeCleared) {
     if (notifDot) notifDot.style.display = "block";
   } else {
     if (notifDot) notifDot.style.display = "none";
@@ -797,6 +802,11 @@ function renderUI() {
   if (statBookedEl) statBookedEl.textContent = state.booked.length;
   if (statWatchingEl) statWatchingEl.textContent = state.watching.length;
   if (statConflictsEl) statConflictsEl.textContent = state.conflicts.length;
+  
+  // Update saved events & total hours dashboard metrics directly if no animation ticker is active
+  if (typeof updateProfileMetricsDirectly === "function") {
+    updateProfileMetricsDirectly();
+  }
   
   // Update nav conflicts dot
   const navConflictDot = document.getElementById("nav-conflict-dot");
@@ -1074,12 +1084,18 @@ function toggleBooking(id, e) {
   // Remove from watchlist if booking
   state.watching = state.watching.filter(x => x !== castId);
   
+  const allEvents = getEventsRegistry();
+  const ev = allEvents.find(x => x.id === castId);
+  const titleText = ev ? ev.title : "Event";
+  
   if (state.booked.includes(castId)) {
     state.booked = state.booked.filter(x => x !== castId);
     triggerToast("Removed event booking.");
+    sendBrowserNotification("Event Removed", `Cancelled booking for: ${titleText}`);
   } else {
     state.booked.push(castId);
     triggerToast("Event successfully booked!");
+    sendBrowserNotification("Event Booked", `Successfully booked: ${titleText}`);
   }
   
   evaluateConflicts();
@@ -1095,12 +1111,18 @@ function toggleWatchlist(id, e) {
   // Remove from bookings if adding to watchlist
   state.booked = state.booked.filter(x => x !== castId);
   
+  const allEvents = getEventsRegistry();
+  const ev = allEvents.find(x => x.id === castId);
+  const titleText = ev ? ev.title : "Event";
+  
   if (state.watching.includes(castId)) {
     state.watching = state.watching.filter(x => x !== castId);
     triggerToast("Removed from watchlist.");
+    sendBrowserNotification("Watchlist Removed", `Removed from watchlist: ${titleText}`);
   } else {
     state.watching.push(castId);
     triggerToast("Added to watchlist.");
+    sendBrowserNotification("Watchlist Added", `Added to watchlist: ${titleText}`);
   }
   
   evaluateConflicts();
@@ -1124,7 +1146,93 @@ function deleteCustomEvent(id, e) {
   }
 }
 
+// Ticker Animation and Profile Metrics Controllers
+const activeTickers = new Map();
+
+function animateSaaSTicker(elementId, targetValue, duration = 800, isFloat = false) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+
+  // Cancel any ongoing ticker animation for this element to prevent overlap
+  if (activeTickers.has(elementId)) {
+    cancelAnimationFrame(activeTickers.get(elementId));
+  }
+
+  const startValue = 0;
+  const startTime = performance.now();
+
+  function updateTicker(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Ease-out quad function for smooth deceleration
+    const easeProgress = progress * (2 - progress);
+    const currentValue = startValue + (targetValue - startValue) * easeProgress;
+    
+    if (isFloat) {
+      el.textContent = currentValue.toFixed(1);
+    } else {
+      el.textContent = Math.floor(currentValue);
+    }
+
+    if (progress < 1) {
+      const handle = requestAnimationFrame(updateTicker);
+      activeTickers.set(elementId, handle);
+    } else {
+      if (isFloat) {
+        el.textContent = targetValue.toFixed(1);
+      } else {
+        el.textContent = Math.floor(targetValue);
+      }
+      activeTickers.delete(elementId);
+    }
+  }
+
+  const handle = requestAnimationFrame(updateTicker);
+  activeTickers.set(elementId, handle);
+}
+
+function triggerProfileTickers() {
+  const allEvents = getEventsRegistry();
+  const bookedEvents = allEvents.filter(e => state.booked.includes(e.id) && !state.hiddenEvents?.includes(e.id));
+  const savedCount = bookedEvents.length;
+
+  let totalHours = 0;
+  bookedEvents.forEach(ev => {
+    const range = getEventTimeRange(ev);
+    let durationMinutes = range.end - range.start;
+    if (durationMinutes < 0) durationMinutes += 1440;
+    totalHours += durationMinutes / 60;
+  });
+
+  animateSaaSTicker("metric-saved-count", savedCount, 800, false);
+  animateSaaSTicker("metric-total-hours", totalHours, 800, true);
+}
+
+function updateProfileMetricsDirectly() {
+  if (activeTickers.has("metric-saved-count") || activeTickers.has("metric-total-hours")) {
+    return;
+  }
+  const allEvents = getEventsRegistry();
+  const bookedEvents = allEvents.filter(e => state.booked.includes(e.id) && !state.hiddenEvents?.includes(e.id));
+  const savedCount = bookedEvents.length;
+
+  let totalHours = 0;
+  bookedEvents.forEach(ev => {
+    const range = getEventTimeRange(ev);
+    let durationMinutes = range.end - range.start;
+    if (durationMinutes < 0) durationMinutes += 1440;
+    totalHours += durationMinutes / 60;
+  });
+
+  const savedCountEl = document.getElementById("metric-saved-count");
+  const totalHoursEl = document.getElementById("metric-total-hours");
+  if (savedCountEl) savedCountEl.textContent = savedCount;
+  if (totalHoursEl) totalHoursEl.textContent = totalHours.toFixed(1);
+}
+
 function switchView(v) {
+  const prevView = state.activeView;
   state.activeView = v;
   ["schedule", "myplan", "conflicts", "map"].forEach(x => {
     const section = document.getElementById("view-" + x);
@@ -1145,6 +1253,10 @@ function switchView(v) {
   }
   
   renderUI();
+  
+  if (v === 'myplan' && prevView !== 'myplan') {
+    triggerProfileTickers();
+  }
 }
 
 function scrollToAlerts() {
@@ -1311,6 +1423,9 @@ function syncSettingsUI() {
   
   const simulateCheck = document.getElementById("setting-simulate-time");
   if (simulateCheck) simulateCheck.checked = !!state.settings.simulateTime;
+
+  const notifCheck = document.getElementById("setting-browser-notifications");
+  if (notifCheck) notifCheck.checked = !!state.settings.notificationsEnabled;
 }
 
 // OSINT Quiz Simulator Code
@@ -1473,20 +1588,35 @@ function triggerSimulatedUpload() {
 }
 
 // Dynamic Toast notifications
-function triggerToast(msg) {
+function showSaaSToast(message, type = 'info') {
   const container = document.getElementById("toast-container");
   if (!container) return;
 
   const toast = document.createElement("div");
-  toast.className = "toast-msg";
-  toast.textContent = msg;
+  toast.className = `toast-msg ${type}`;
+  toast.textContent = message;
   container.appendChild(toast);
-  
+
   setTimeout(() => toast.classList.add("show"), 15);
   setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => toast.remove(), 300);
-  }, 3200);
+  }, 3500);
+}
+
+function triggerToast(msg) {
+  const lowerMsg = msg.toLowerCase();
+  const isWarning = lowerMsg.includes("conflict") || 
+                    lowerMsg.includes("clash") || 
+                    lowerMsg.includes("alert") || 
+                    lowerMsg.includes("warning") || 
+                    lowerMsg.includes("failed") || 
+                    lowerMsg.includes("error") || 
+                    lowerMsg.includes("ineligible") || 
+                    lowerMsg.includes("exceeds") || 
+                    lowerMsg.includes("incorrect");
+  
+  showSaaSToast(msg, isWarning ? 'warning' : 'info');
 }
 
 // Custom simulated time provider
@@ -2051,6 +2181,7 @@ if (trackTabs) {
 }
 
 // Notifications Builder
+// Notifications Builder
 function openNotifications() {
   renderNotifications();
   openModal("notifications-modal");
@@ -2059,17 +2190,13 @@ function openNotifications() {
   if (notifDot) notifDot.style.display = "none";
 }
 
-function renderNotifications() {
-  const allEvents = getEventsRegistry();
-  const container = document.getElementById("notifications-inner-content");
-  if (!container) return;
-  container.innerHTML = "";
-  
+function getNotificationsList() {
   let notices = [];
   
   // 1. Simulator Warnings
   if (!state.simulators.quizCompleted) {
     notices.push({
+      id: "quiz-pending",
       type: "alert",
       icon: "ti-alert-triangle",
       title: "Pre-Paradox Quiz Pending",
@@ -2078,6 +2205,7 @@ function renderNotifications() {
   }
   if (!state.simulators.paperSubmitted) {
     notices.push({
+      id: "paper-pending",
       type: "alert",
       icon: "ti-file-upload",
       title: "Research Draft Due Soon",
@@ -2086,8 +2214,9 @@ function renderNotifications() {
   }
   
   // 2. Conflicts
-  if (state.conflicts.length > 0) {
+  if (state.conflicts && state.conflicts.length > 0) {
     notices.push({
+      id: "conflicts-alert",
       type: "alert",
       icon: "ti-calendar-event",
       title: `${state.conflicts.length} Overlapping Bookings`,
@@ -2102,6 +2231,7 @@ function renderNotifications() {
     const transitTextContentEl = transitWarningEl.querySelector("#transit-text-content");
     const bodyContent = transitTextContentEl ? transitTextContentEl.innerHTML : "";
     notices.push({
+      id: "transit-alert",
       type: isCritical ? "alert" : "warning",
       icon: "ti-run",
       title: isCritical ? "Critical Travel Distance Warning" : "Campus Transit Notice",
@@ -2111,33 +2241,147 @@ function renderNotifications() {
   
   // 4. Default Broadcast Announcements
   notices.push({
+    id: "announcement-welcome",
     type: "info",
     icon: "ti-speakerphone",
     title: "Welcome to Paradox 2026",
     body: "IIT Madras welcomes all selected students to campus. The Opening Ceremony begins Jun 10 at 9:30 AM in the SAC grounds."
   });
   notices.push({
+    id: "announcement-zumba",
     type: "info",
     icon: "ti-music",
     title: "Zumba & DJ Sessions Scheduled",
     body: "Guided zumba is scheduled for Jun 11 at 5:00 AM. DJ Concert goes live on Jun 11 at 7:00 PM at the Open Air Theatre (OAT)."
   });
   
-  // Render using DocumentFragment
+  // Filter out dismissed ones
+  const dismissed = state.dismissedNotifications || [];
+  return notices.filter(n => !dismissed.includes(n.id));
+}
+
+function renderNotifications() {
+  const container = document.getElementById("notifications-inner-content");
+  if (!container) return;
+  container.innerHTML = "";
+  
+  const activeNotices = getNotificationsList();
+  
+  if (activeNotices.length === 0) {
+    container.innerHTML = `
+      <div style="text-align: center; padding: 30px 10px; color: var(--muted);">
+        <i class="ti ti-bell-off" style="font-size: 32px; display: block; margin-bottom: 8px; color: var(--dim);"></i>
+        <p style="font-size: 13px;">No new notifications. You are all caught up!</p>
+      </div>
+    `;
+    return;
+  }
+  
   const fragment = document.createDocumentFragment();
-  notices.forEach(n => {
+  activeNotices.forEach(n => {
     const item = document.createElement("div");
     item.className = `notification-item ${n.type}`;
+    item.style.position = "relative";
     item.innerHTML = `
       <i class="ti ${n.icon} notification-icon" aria-hidden="true"></i>
-      <div>
+      <div style="flex: 1; padding-right: 20px;">
         <div class="notification-title">${n.title}</div>
         <div class="notification-body">${n.body}</div>
       </div>
+      <button class="dismiss-notif-btn" onclick="dismissNotification('${n.id}', event)" aria-label="Dismiss notification" style="position: absolute; top: 10px; right: 10px; background: transparent; border: none; color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; transition: color 0.2s;"><i class="ti ti-x" style="font-size: 14px;"></i></button>
     `;
     fragment.appendChild(item);
   });
   container.appendChild(fragment);
+}
+
+function dismissNotification(id, event) {
+  if (event) event.stopPropagation();
+  if (!state.dismissedNotifications) state.dismissedNotifications = [];
+  if (!state.dismissedNotifications.includes(id)) {
+    state.dismissedNotifications.push(id);
+  }
+  saveState();
+  renderNotifications();
+  updateNotifBadgeState();
+}
+
+function updateNotifBadgeState() {
+  const notifDot = document.getElementById("notif-dot");
+  if (!notifDot) return;
+  const activeNotices = getNotificationsList();
+  if (activeNotices.length > 0 && !state.notifBadgeCleared) {
+    notifDot.style.display = "block";
+  } else {
+    notifDot.style.display = "none";
+  }
+}
+
+// Browser Reminders & Notifications feature controllers
+function toggleBrowserNotifications(enabled) {
+  if (enabled) {
+    if (!("Notification" in window)) {
+      triggerToast("Browser notifications not supported on this device.");
+      const cb = document.getElementById("setting-browser-notifications");
+      if (cb) cb.checked = false;
+      state.settings.notificationsEnabled = false;
+      saveState();
+      return;
+    }
+    
+    if (Notification.permission === "granted") {
+      state.settings.notificationsEnabled = true;
+      saveState();
+      triggerToast("Browser notifications enabled!");
+      sendBrowserNotification("Paradox Navigator", "You will now receive notifications for your schedule.");
+    } else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          state.settings.notificationsEnabled = true;
+          saveState();
+          triggerToast("Browser notifications enabled!");
+          sendBrowserNotification("Paradox Navigator", "You will now receive notifications for your schedule.");
+        } else {
+          state.settings.notificationsEnabled = false;
+          saveState();
+          const cb = document.getElementById("setting-browser-notifications");
+          if (cb) cb.checked = false;
+          triggerToast("Notification permission denied.");
+        }
+      });
+    } else {
+      triggerToast("Notification permission blocked. Please enable it in browser settings.");
+      const cb = document.getElementById("setting-browser-notifications");
+      if (cb) cb.checked = false;
+      state.settings.notificationsEnabled = false;
+      saveState();
+    }
+  } else {
+    state.settings.notificationsEnabled = false;
+    saveState();
+    triggerToast("Browser notifications disabled.");
+  }
+}
+
+function sendBrowserNotification(title, body) {
+  if (state.settings.notificationsEnabled && "Notification" in window && Notification.permission === "granted") {
+    try {
+      new Notification(title, {
+        body: body,
+        icon: "img/icon-192.png"
+      });
+    } catch (e) {
+      console.warn("Failed to trigger native Notification:", e);
+      if (navigator.serviceWorker && navigator.serviceWorker.ready) {
+        navigator.serviceWorker.ready.then(reg => {
+          reg.showNotification(title, {
+            body: body,
+            icon: "img/icon-192.png"
+          });
+        });
+      }
+    }
+  }
 }
 
 // Scroll listener for Back to Top Button
