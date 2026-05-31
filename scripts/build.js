@@ -17,11 +17,10 @@ function copyDir(src, dest) {
   }
 }
 
-// 1. Create www directory
-if (fs.existsSync('www')) {
-  fs.rmSync('www', { recursive: true, force: true });
+// 1. Create www directory if it doesn't exist
+if (!fs.existsSync('www')) {
+  fs.mkdirSync('www', { recursive: true });
 }
-fs.mkdirSync('www', { recursive: true });
 
 // 2. Copy static files
 const filesToCopy = [

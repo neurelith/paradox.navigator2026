@@ -15,8 +15,10 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
   <link rel="apple-touch-icon" href="img/icon-192.png">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tabler-icons.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.3">
 </head>
 <body>
 
@@ -51,8 +53,45 @@
     <button class="now-next-dismiss" onclick="dismissNowNext()" aria-label="Dismiss Banner"><i class="ti ti-x" aria-hidden="true"></i></button>
   </div>
 
+  <!-- 1.5 DISCOVER / HOME SECTION VIEW -->
+  <div id="view-discover" class="view-section visible">
+    <!-- Now & Next Banner (LIVE NOW Ticker Strip) -->
+    <div class="now-next-banner" id="ticker-strip" style="display: flex;">
+      <div class="live-now-badge">LIVE NOW</div>
+      <div class="now-next-divider"></div>
+      <div class="now-next-content" id="ticker-content-list">
+        <!-- Loaded dynamically -->
+      </div>
+      <button class="now-next-dismiss" onclick="dismissNowNext()" aria-label="Dismiss Banner"><i class="ti ti-x" aria-hidden="true"></i></button>
+    </div>
+
+    <!-- Now Playing Card -->
+    <div class="now-next-card glass-card" id="now-playing-card">
+      <div class="now-playing-header">
+        <span class="now-playing-dot"></span>
+        <span class="now-playing-label">NOW PLAYING</span>
+      </div>
+      <div class="now-playing-title" id="now-playing-title">No events live right now</div>
+      <div class="now-playing-time" id="now-playing-time">-- : --</div>
+      
+      <div class="up-next-label">UP NEXT</div>
+      <div class="up-next-list" id="up-next-list">
+        <!-- Up next event rows with pipe divider -->
+      </div>
+    </div>
+
+    <div class="section-label">Discover events</div>
+    <div class="events-list" id="discover-events-list"></div>
+    
+    <!-- Day Chips at bottom -->
+    <div class="section-label" style="margin-top: 16px;">Browse by Day</div>
+    <div class="day-tabs" id="discover-day-tabs" role="tablist" style="padding-bottom: 20px;">
+      <!-- populated dynamically -->
+    </div>
+  </div>
+
   <!-- 2. MAIN SCHEDULE SECTION VIEW -->
-  <div id="view-schedule" class="view-section visible">
+  <div id="view-schedule" class="view-section">
 
     <!-- Android App Download Banner -->
     <div class="urgent-banner" id="android-download-banner" style="background: var(--primary-container); border-color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
@@ -116,30 +155,90 @@
 
   </div>
 
-  <!-- 3. PERSONAL PLAN SECTION VIEW -->
-  <div id="view-myplan" class="view-section">
-    <div class="stats-row">
-      <div class="stat-card"><div class="stat-num teal" id="stat-booked">0</div><div class="stat-label">Booked</div></div>
-      <div class="stat-card"><div class="stat-num amber" id="stat-watching">0</div><div class="stat-label">Watching</div></div>
-      <div class="stat-card"><div class="stat-num red" id="stat-conflicts">0</div><div class="stat-label">Conflicts</div></div>
+  <!-- 3. PROFILE SECTION VIEW -->
+  <div id="view-profile" class="view-section">
+    <!-- Main Profile Card (Glass) -->
+    <div class="profile-card glass-card">
+      <img class="profile-avatar" src="img/events/culturals/mr-and-ms-paradox.webp" alt="Alex Mercer" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><circle cx=%2240%22 cy=%2240%22 r=%2240%22 fill=%22%23e8dfc8%22/><text x=%2240%22 y=%2248%22 font-family=%22sans-serif%22 font-size=%2224%22 text-anchor=%22middle%22 fill=%22%234a3f28%22>AM</text></svg>';">
+      <h2 class="profile-name">Alex Mercer</h2>
+      <div class="profile-role">Senior Data Architect</div>
+      
+      <div class="profile-badges">
+        <span class="pro-badge">Pro</span>
+        <span class="speaker-badge">Speaker</span>
+      </div>
+      
+      <button class="edit-profile-btn" onclick="triggerToast('Edit Profile feature is coming soon!')">Edit Profile</button>
     </div>
     
-    <div class="stats-row" style="grid-template-columns: repeat(2, minmax(0, 1fr)); padding-top: 0; margin-top: -6px;">
-      <div class="stat-card"><div class="stat-num primary" id="metric-saved-count">0</div><div class="stat-label">Saved Events</div></div>
-      <div class="stat-card"><div class="stat-num primary" id="metric-total-hours">0.0</div><div class="stat-label">Total Hours</div></div>
+    <!-- 2-Column Stat Cards Grid -->
+    <div class="profile-stats-grid">
+      <div class="stat-card glass-card">
+        <div class="stat-card-label">EVENTS ATTENDED</div>
+        <div style="display: flex; align-items: baseline; margin-top: 6px;">
+          <span class="stat-card-num" id="profile-events-count">0</span>
+          <span class="trend-up">↗ +3</span>
+        </div>
+      </div>
+      <div class="stat-card glass-card">
+        <div class="stat-card-label">CONNECTIONS</div>
+        <div style="display: flex; align-items: baseline; margin-top: 6px;">
+          <span class="stat-card-num">156</span>
+          <span class="stat-card-suffix">Active</span>
+        </div>
+      </div>
+      <div class="stat-card glass-card" style="grid-column: span 2;">
+        <div class="stat-card-label">TALKS GIVEN</div>
+        <div style="display: flex; align-items: baseline; margin-top: 6px;">
+          <span class="stat-card-num">8</span>
+        </div>
+      </div>
+      <div class="stat-card glass-card" style="grid-column: span 2;">
+        <div class="stat-card-label">CERTIFICATIONS</div>
+        <div style="display: flex; align-items: baseline; margin-top: 6px;">
+          <span class="stat-card-num">3</span>
+          <span class="stat-card-suffix">Verified</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Total Hours metric -->
+    <div class="stat-card glass-card" style="margin: 0 16px 16px;">
+      <div class="stat-card-label">TOTAL HOURS AT FEST</div>
+      <div style="display: flex; align-items: baseline; margin-top: 6px;">
+        <span class="stat-card-num" id="profile-hours-count">0.0</span>
+        <span class="stat-card-suffix">Hours Booked</span>
+      </div>
     </div>
     
     <div class="section-label">My booked schedule</div>
-    <div class="events-list" id="booked-list"></div>
+    <div class="events-list" id="profile-booked-list"></div>
     
     <div class="section-label" style="margin-top:20px">My Watchlist</div>
-    <div class="events-list" id="watch-list"></div>
+    <div class="events-list" id="profile-watch-list"></div>
   </div>
 
   <!-- 4. SCHEDULE CONFLICT SECTION VIEW -->
   <div id="view-conflicts" class="view-section">
+    <div class="detail-header">
+      <button class="icon-btn" onclick="goBack()" aria-label="Go Back"><i class="ti ti-arrow-left"></i></button>
+      <div class="header-title">PARADOX 2026</div>
+      <div style="width: 40px;"></div>
+    </div>
     <div class="section-label">Scheduling Conflict Log</div>
     <div class="conflicts-list" id="conflicts-list"></div>
+  </div>
+
+  <!-- 4.5 EVENT DETAILS SECTION VIEW -->
+  <div id="view-details" class="view-section">
+    <div class="detail-header">
+      <button class="icon-btn" onclick="goBack()" aria-label="Go Back"><i class="ti ti-arrow-left"></i></button>
+      <div class="header-title">PARADOX 2026</div>
+      <button class="icon-btn" id="details-share-btn" onclick="shareCurrentEvent()" aria-label="Share Event"><i class="ti ti-share"></i></button>
+    </div>
+    <div class="details-content" id="details-content-body">
+      <!-- Loaded dynamically -->
+    </div>
   </div>
 
   <!-- 5. DUAL-MODE MAP VIEW TAB -->
@@ -354,21 +453,62 @@
         <iframe class="real-map-iframe" id="gmaps-viewport-iframe" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
+
+    <!-- Amenities chip rail (Page 4 FIX 4) -->
+    <div class="amenities-chip-rail">
+      <div class="amenity-chip" onclick="triggerToast('Searching for Restrooms nearby... 🚻')">
+        <i class="ti ti-restroom"></i><span>Restrooms</span>
+      </div>
+      <div class="amenity-chip" onclick="triggerToast('Searching for Food Zones nearby... 🍔')">
+        <i class="ti ti-cookie"></i><span>Food</span>
+      </div>
+      <div class="amenity-chip" onclick="triggerToast('Searching for Charging Ports nearby... ⚡')">
+        <i class="ti ti-battery-charging"></i><span>Charging</span>
+      </div>
+    </div>
+
+    <!-- Route Panel (Page 4 FIX 2) -->
+    <div class="route-panel glass-card" id="map-route-panel">
+      <div class="route-selector-row">
+        <div class="route-location-pill" id="route-origin">
+          <i class="ti ti-map-pin"></i><span>Main Stage</span>
+        </div>
+        <i class="ti ti-arrow-right" style="color: #8a7a60; font-size: 14px;"></i>
+        <div class="route-location-pill" id="route-destination">
+          <i class="ti ti-map-pin"></i><span>Workshop C</span>
+        </div>
+      </div>
+      
+      <!-- Transit info (Page 4 FIX 3) -->
+      <div class="transit-warning-maps">
+        <i class="ti ti-run" style="font-size: 14px; color: #8a7a60;"></i>
+        <span id="transit-log-text">TRANSIT_LOG: 320m / 5m 20s</span>
+        <div class="tight-connection-pill" id="tight-connection-pill" style="display: none;">
+          <i class="ti ti-alert-triangle"></i><span>TIGHT CONNECTION</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Destination Context Card -->
+    <div class="dest-context-card glass-card" id="map-dest-context" style="display: none;">
+      <div class="dest-avatar" id="map-dest-avatar">WC</div>
+      <div class="dest-info">
+        <div class="dest-event-name" id="map-dest-name">Quantum Computing Fundamentals</div>
+        <div class="dest-event-time" id="map-dest-time">10:00 AM – 12:00 PM</div>
+      </div>
+    </div>
     
     <div style="padding: 0 16px; font-size: 12px; color: var(--muted); line-height: 1.5;">
       💡 Clicking on events centered on a venue automatically loads the focal coordinates above. Drag or scroll/pinch to pan and zoom the campus map.
     </div>
   </div>
 
-  <!-- 6. BOTTOM NAVIGATION BAR - Compact Icon + Label, pure white -->
-  <div class="bottom-nav" role="navigation" aria-label="Main Navigation">
-    <div class="nav-item active" id="nav-schedule" onclick="switchView('schedule')"><i class="ti ti-calendar-event" aria-hidden="true"></i>Schedule</div>
-    <div class="nav-item" id="nav-myplan" onclick="switchView('myplan')"><i class="ti ti-bookmark" aria-hidden="true"></i>My plan</div>
-    
-    <button class="nav-fab" onclick="openModal('event-creator-modal')" aria-label="Add custom event"><i class="ti ti-plus" aria-hidden="true"></i></button>
-    
-    <div class="nav-item" id="nav-conflicts" onclick="switchView('conflicts')"><i class="ti ti-alert-circle" aria-hidden="true"></i>Conflicts<span class="badge-nav-dot" id="nav-conflict-dot" style="display:none;"></span></div>
-    <div class="nav-item" id="nav-map" onclick="switchView('map')"><i class="ti ti-map-2" aria-hidden="true"></i>Map</div>
+  <!-- 6. BOTTOM NAVIGATION BAR - Icons only (Discover, Schedule, Map, Profile) -->
+  <div class="bottom-nav light-nav" id="app-bottom-nav" role="navigation" aria-label="Main Navigation">
+    <div class="nav-item active" id="nav-discover" onclick="switchView('discover')" title="Discover"><i class="ti ti-compass" aria-hidden="true"></i></div>
+    <div class="nav-item" id="nav-schedule" onclick="switchView('schedule')" title="Schedule"><i class="ti ti-calendar-event" aria-hidden="true"></i></div>
+    <div class="nav-item" id="nav-map" onclick="switchView('map')" title="Map"><i class="ti ti-map-2" aria-hidden="true"></i></div>
+    <div class="nav-item" id="nav-profile" onclick="switchView('profile')" title="Profile"><i class="ti ti-user" aria-hidden="true"></i></div>
   </div>
 
   <!-- ==========================================================================
@@ -582,7 +722,7 @@
   </div>
 
   <!-- STATE ENGINE & RENDERING LIFE CYCLE -->
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2.3" defer></script>
   <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').then(() => console.log('[SW] Registered')).catch(e => console.warn('[SW] Registration failed:', e)); }</script>
   
   <!-- Back to Top Button -->

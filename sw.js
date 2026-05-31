@@ -7,7 +7,7 @@
  *  - NETWORK_FIRST for HTML (to pick up event data updates)
  */
 
-const CACHE_NAME = 'paradox-navigator-v2.2';
+const CACHE_NAME = 'paradox-navigator-v2.3';
 
 // Core assets to pre-cache on install
 const PRECACHE_ASSETS = [
@@ -86,7 +86,7 @@ self.addEventListener('fetch', (event) => {
  */
 async function cacheFirst(request) {
   const cache = await caches.open(CACHE_NAME);
-  const cachedResponse = await cache.match(request);
+  const cachedResponse = await cache.match(request, { ignoreSearch: true });
 
   if (cachedResponse) {
     return cachedResponse;
@@ -122,7 +122,7 @@ async function networkFirst(request) {
     }
     return networkResponse;
   } catch (err) {
-    const cachedResponse = await cache.match(request);
+    const cachedResponse = await cache.match(request, { ignoreSearch: true });
     if (cachedResponse) {
       return cachedResponse;
     }
