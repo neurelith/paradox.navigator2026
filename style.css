@@ -1962,48 +1962,48 @@ body[data-theme="dark"].compact-mode .event-card[data-cover]:hover::before {
 
 /* Forests & lakes */
 .map-forest {
-  fill: #e8f5e9; /* soft forest light green */
+  fill: #E3EDE0; /* soft mint-greenery matching Zomato's pastel parks */
   transition: fill 0.35s ease;
 }
 body[data-theme="dark"] .map-forest {
-  fill: #142816;
+  fill: #1E351F; /* charcoal forest dark green */
 }
 
 .map-lake {
-  fill: #e0f7fa; /* soft light blue */
-  stroke: #b2ebf2;
-  stroke-width: 2px;
+  fill: #DBE6EC; /* premium pastel grey-blue lake */
+  stroke: #C9D9E1;
+  stroke-width: 1.5px;
   transition: fill 0.35s ease, stroke 0.35s ease;
 }
 body[data-theme="dark"] .map-lake {
-  fill: #0c2533;
-  stroke: #16465f;
+  fill: #1A242E; /* charcoal deep blue lake */
+  stroke: #263543;
 }
 
 /* Roads & Lanes */
 .map-road-bg {
-  stroke: var(--border);
-  stroke-width: 7px;
+  stroke: #E4DFD5; /* clean road backing */
+  stroke-width: 6px;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
   transition: stroke var(--transition-fluid);
 }
 body[data-theme="dark"] .map-road-bg {
-  stroke: #2E251E;
+  stroke: #2C2620; /* dark warm sepia road */
 }
 
 .map-road-lane {
-  stroke: var(--surface);
+  stroke: #FFFFFF; /* white lane dashes for contrast */
   stroke-width: 1px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 4, 6;
+  stroke-dasharray: 3, 5;
   fill: none;
   transition: stroke var(--transition-fluid);
 }
 body[data-theme="dark"] .map-road-lane {
-  stroke: rgba(255, 255, 255, 0.12);
+  stroke: rgba(255, 255, 255, 0.15);
 }
 
 /* Walking route transit path */
@@ -2025,11 +2025,12 @@ body[data-theme="dark"] .map-road-lane {
   cursor: pointer;
 }
 .pin-marker {
-  fill: var(--dim);
-  stroke: var(--surface);
-  stroke-width: 1.5px;
+  fill: #ff5252 !important; /* premium Zomato-neon red/orange pin */
+  stroke: #ffffff !important;
+  stroke-width: 1.8px !important;
   transform-origin: 0 0;
   transition: fill 0.25s ease, stroke 0.25s ease, transform 0.3s cubic-bezier(0.2, 0, 0, 1.0);
+  filter: drop-shadow(0 3px 5px rgba(255, 82, 82, 0.35));
 }
 .pin-marker-cloud {
   fill: #e0f2fe; /* light blue cloud */
@@ -2069,36 +2070,39 @@ body[data-theme="dark"] .pin-marker-cloud {
   fill: var(--primary-hover);
 }
 
-/* States: Has booked event */
+/* States: Has booked (participating) event */
 .map-pin.has-active-event .pin-marker {
-  fill: var(--teal) !important;
-  stroke: var(--teal-container);
+  fill: #00bfa5 !important; /* gorgeous neon cyan-teal */
+  stroke: #ffffff !important;
+  filter: drop-shadow(0 3px 5px rgba(0, 191, 165, 0.4));
 }
 .map-pin.has-active-event .pin-pulse {
-  stroke: var(--teal) !important;
+  stroke: #00bfa5 !important;
   animation: pin-ripple 2s infinite ease-out;
 }
 
-/* States: Has watchlist event */
+/* States: Has watchlist (interested) event */
 .map-pin.has-watched-event .pin-marker {
-  fill: var(--amber-light) !important;
-  stroke: var(--amber-container);
+  fill: #ffb300 !important; /* neon amber-yellow */
+  stroke: #ffffff !important;
+  filter: drop-shadow(0 3px 5px rgba(255, 179, 0, 0.4));
 }
 .map-pin.has-watched-event .pin-pulse {
-  stroke: var(--amber-light) !important;
+  stroke: #ffb300 !important;
   animation: pin-ripple 2s infinite ease-out;
 }
 
 /* State: Selected / focused pin */
 .map-pin.selected .pin-marker {
-  fill: var(--primary) !important;
-  stroke: var(--primary-container) !important;
+  fill: #ff3d00 !important; /* intense neon red-orange focal */
+  stroke: #ffffff !important;
   transform: scale(1.3) translateY(-3px);
-  filter: drop-shadow(0 4px 6px rgba(217, 119, 6, 0.25));
+  filter: drop-shadow(0 5px 8px rgba(255, 61, 0, 0.4));
 }
 .map-pin.selected .pin-label {
-  fill: var(--primary) !important;
+  fill: #ff3d00 !important;
   font-weight: 800;
+  text-shadow: 0 1px 2px rgba(255, 61, 0, 0.15);
 }
 
 @keyframes pin-ripple {
@@ -2609,10 +2613,20 @@ body[data-theme="dark"] .day-tab.active {
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
+  transition: all 0.2s ease !important;
+}
+.amenity-chip.active {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-color: var(--primary) !important;
 }
 .amenity-chip i {
   font-size: 14px !important;
   color: #8a7a60 !important;
+  transition: color 0.2s ease !important;
+}
+.amenity-chip.active i {
+  color: #fff !important;
 }
 
 /* Destination Context styling */
@@ -2879,4 +2893,303 @@ body[data-theme="dark"] .add-to-calendar-btn {
   display: flex;
   align-items: center;
 }
+
+/* --- Dynamic Bento Grid Slider & Details Cover & Clash Warning Styles --- */
+.details-cover-container {
+  width: 100%;
+  max-height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.45);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  background: rgba(0,0,0,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.details-cover-img {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.bento-slider {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 16px 20px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.bento-slider::-webkit-scrollbar {
+  display: none;
+}
+.bento-card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  height: 180px;
+  border-radius: 16px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.45) !important;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  opacity: 0;
+  transform: translateX(25px);
+  animation: bentoSlideIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes bentoSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.bento-card.wide {
+  width: 260px;
+}
+.bento-card.tall {
+  width: 220px;
+}
+.bento-card.regular {
+  width: 190px;
+}
+.bento-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26,20,8,0.1) 0%, rgba(26,20,8,0.85) 100%);
+  z-index: 1;
+}
+.bento-card-header {
+  position: relative;
+  z-index: 2;
+  padding: 12px;
+  align-self: flex-start;
+}
+.bento-card-footer {
+  position: relative;
+  z-index: 2;
+  padding: 12px;
+  color: #fff;
+  width: 100%;
+}
+.bento-card-title {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+  text-shadow: 0 1.5px 3px rgba(0,0,0,0.4);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.bento-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.85);
+  font-family: 'Inter', sans-serif;
+}
+.bento-card-meta i {
+  font-size: 10px;
+  margin-right: 2px;
+}
+
+.view-all-card {
+  width: 150px;
+  background: var(--primary) !important;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  text-align: center;
+}
+.view-all-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+.view-all-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+.view-all-card:hover .view-all-icon {
+  transform: translateX(5px);
+}
+.view-all-text {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Event Details Participate & Watchlist Row Layout */
+.details-actions-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  width: 100%;
+}
+.add-to-watchlist-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,250,240,0.55);
+  color: #8a7a60;
+  border: 1px solid rgba(255,255,255,0.45);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+}
+.add-to-watchlist-btn:hover {
+  background: rgba(255,250,240,0.8);
+  transform: translateY(-1px);
+}
+.add-to-watchlist-btn.watched {
+  background: #fff4e6;
+  color: #854f0b;
+  border-color: #f0c080;
+}
+body[data-theme="dark"] .add-to-watchlist-btn {
+  background: rgba(42, 36, 29, 0.55);
+  border-color: rgba(255,255,255,0.08);
+  color: #8a7a60;
+}
+body[data-theme="dark"] .add-to-watchlist-btn.watched {
+  background: #4a3f28;
+  color: #ffd59a;
+  border-color: #7a684c;
+}
+
+/* Premium Dropdown selectors for Map Route Panel */
+.route-select-dropdown {
+  background: #e8dfc8 !important;
+  border: 1px solid #ddd5c0 !important;
+  border-radius: 9999px !important;
+  padding: 6px 28px 6px 14px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #4a3f28 !important;
+  cursor: pointer !important;
+  outline: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a3f28' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 10px center !important;
+  transition: all 0.25s ease !important;
+}
+.route-select-dropdown:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.15) !important;
+}
+body[data-theme="dark"] .route-select-dropdown {
+  background: #3A3228 !important;
+  border: 1px solid #4A3F33 !important;
+  color: #F5F0E8 !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23F5F0E8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>") !important;
+}
+
+/* First-Run Onboarding Modal screen styles */
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  background-image: linear-gradient(135deg, var(--bg) 0%, rgba(217, 119, 6, 0.08) 100%) !important;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+  transition: opacity 0.4s cubic-bezier(0.2, 0, 0, 1.0), visibility 0.4s;
+}
+.onboarding-card {
+  width: 100%;
+  max-width: 375px;
+  border-radius: 24px !important;
+  padding: 24px !important;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18) !important;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--surface2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+}
+body[data-theme="dark"] .onboarding-card {
+  background: #2A241D !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.4) !important;
+}
+.onboarding-title {
+  font-family: var(--font-display) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: var(--primary) !important;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.onboarding-subtitle {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  color: var(--muted) !important;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.onboarding-intro {
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  color: var(--text) !important;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* Dark theme bottom footer support */
+body[data-theme="dark"] .bottom-nav.light-nav {
+  background: rgba(26, 22, 18, 0.82) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+}
+body[data-theme="dark"] .bottom-nav.light-nav .nav-item {
+  color: #A89B88 !important;
+}
+body[data-theme="dark"] .bottom-nav.light-nav .nav-item.active {
+  color: #F5F0E8 !important;
+}
+body[data-theme="dark"] .bottom-nav.light-nav .nav-item.active::after {
+  background: var(--primary) !important;
+}
+
+
 

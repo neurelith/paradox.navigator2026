@@ -39,7 +39,6 @@
       <div class="header-sub">IIT Madras · Jun 09–14</div>
     </div>
     <div class="header-actions">
-      <button class="icon-btn" id="view-toggle-btn" onclick="toggleCardView()" title="Toggle Compact/Detail View" aria-label="Toggle View"><i class="ti ti-list" id="view-toggle-icon" aria-hidden="true"></i></button>
       <button class="icon-btn" id="filter-btn" onclick="openModal('settings-modal')" title="Settings and Customization" aria-label="Settings"><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i></button>
       <button class="icon-btn" id="notif-btn" title="Notifications Alert" aria-label="Notifications" onclick="openNotifications()"><i class="ti ti-bell" aria-hidden="true"></i><span class="badge-dot" id="notif-dot" style="display:none;"></span></button>
     </div>
@@ -79,9 +78,15 @@
         <!-- Up next event rows with pipe divider -->
       </div>
     </div>
+    
+    <!-- Discover Search Bar -->
+    <div class="search-container" style="margin: 16px 16px 8px;">
+      <i class="ti ti-search search-icon" aria-hidden="true"></i>
+      <input type="text" id="discover-search" class="search-input" placeholder="Search events, venues, tracks..." aria-label="Search events" oninput="onDiscoverSearchInput(this.value)">
+    </div>
 
     <div class="section-label">Discover events</div>
-    <div class="events-list" id="discover-events-list"></div>
+    <div class="bento-slider" id="discover-events-list"></div>
     
     <!-- Day Chips at bottom -->
     <div class="section-label" style="margin-top: 16px;">Browse by Day</div>
@@ -93,14 +98,7 @@
   <!-- 2. MAIN SCHEDULE SECTION VIEW -->
   <div id="view-schedule" class="view-section">
 
-    <!-- Android App Download Banner -->
-    <div class="urgent-banner" id="android-download-banner" style="background: var(--primary-container); border-color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
-      <div class="urgent-left">
-        <div class="urgent-title" style="display: flex; align-items: center; gap: 6px; font-weight: 800; color: var(--text);"><i class="ti ti-brand-android" style="font-size: 18px; color: var(--teal);"></i> Get the Android App</div>
-        <div class="urgent-sub" style="color: var(--muted); font-size: 11px;">Download the APK to navigate the campus offline.</div>
-      </div>
-      <a href="app-debug.apk" download="ParadoxNavigator.apk" class="urgent-btn" style="background: var(--primary); color: white; border: none; text-decoration: none; padding: 6px 14px; border-radius: var(--r-sm); font-weight: 700; font-size: 12px; display: inline-block; text-align: center;">Download</a>
-    </div>
+    <!-- Android App Download Banner removed from schedule page -->
 
     <!-- Pre-Paradox Urgent Alert Banner -->
     <div class="urgent-banner" id="urgent-banner" style="display:none;">
@@ -160,15 +158,15 @@
     <!-- Main Profile Card (Glass) -->
     <div class="profile-card glass-card">
       <img class="profile-avatar" src="img/events/culturals/mr-and-ms-paradox.webp" alt="Alex Mercer" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><circle cx=%2240%22 cy=%2240%22 r=%2240%22 fill=%22%23e8dfc8%22/><text x=%2240%22 y=%2248%22 font-family=%22sans-serif%22 font-size=%2224%22 text-anchor=%22middle%22 fill=%22%234a3f28%22>AM</text></svg>';">
-      <h2 class="profile-name">Alex Mercer</h2>
-      <div class="profile-role">Senior Data Architect</div>
+      <h2 class="profile-name" id="profile-display-name">Alex Mercer</h2>
+      <div class="profile-role" id="profile-display-role">Senior Data Architect</div>
       
-      <div class="profile-badges">
-        <span class="pro-badge">Pro</span>
-        <span class="speaker-badge">Speaker</span>
+      <div class="profile-badges" id="profile-display-badges">
+        <span class="pro-badge" id="profile-display-badge-pro">Pro</span>
+        <span class="speaker-badge" id="profile-display-badge-speaker">Speaker</span>
       </div>
       
-      <button class="edit-profile-btn" onclick="triggerToast('Edit Profile feature is coming soon!')">Edit Profile</button>
+      <button class="edit-profile-btn" onclick="openProfileEditor()">Edit Profile</button>
     </div>
     
     <!-- 2-Column Stat Cards Grid -->
@@ -207,14 +205,37 @@
       <div class="stat-card-label">TOTAL HOURS AT FEST</div>
       <div style="display: flex; align-items: baseline; margin-top: 6px;">
         <span class="stat-card-num" id="profile-hours-count">0.0</span>
-        <span class="stat-card-suffix">Hours Booked</span>
+        <span class="stat-card-suffix">Hours Participating</span>
+      </div>
+    </div>
+
+    <!-- Share & Install App Card -->
+    <div class="stat-card glass-card" style="margin: 0 16px 16px; display: flex; align-items: center; justify-content: space-between; padding: 16px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="background: rgba(217, 119, 6, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+          <i class="ti ti-share" style="font-size: 20px;"></i>
+        </div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px; color: var(--text);">Share / Download App</div>
+          <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">Share or install offline Android APK</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn-cancel" onclick="shareAppLauncher()" style="padding: 6px 12px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
+          <i class="ti ti-link"></i> Share
+        </button>
+        <a href="app-debug.apk" download="ParadoxNavigator.apk" class="btn-primary" style="padding: 6px 12px; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; border-radius: 8px; text-decoration: none; height: auto; line-height: normal;">
+          <i class="ti ti-download"></i> Install
+        </a>
       </div>
     </div>
     
-    <div class="section-label">My booked schedule</div>
+    <div id="profile-clash-warnings" style="margin: 0 16px 12px; display: none;"></div>
+    
+    <div class="section-label">My Participating Schedule</div>
     <div class="events-list" id="profile-booked-list"></div>
     
-    <div class="section-label" style="margin-top:20px">My Watchlist</div>
+    <div class="section-label" style="margin-top:20px">My Watchlist (Interested)</div>
     <div class="events-list" id="profile-watch-list"></div>
   </div>
 
@@ -434,8 +455,49 @@
           <!-- Remote / Online Portal (Cloud icon in the top left) -->
           <g class="map-pin" id="svg-pin-Remote" transform="translate(150, 150)" onclick="onMapPinClick('Remote')">
             <circle class="pin-pulse" r="18" />
-            <path class="pin-marker-cloud" d="M -10 -4 A 8 8 0 0 1 -4 -12 A 12 12 0 0 1 12 -12 A 8 8 0 0 1 14 -4 A 6 6 0 0 1 10 4 L -6 4 A 6 6 0 0 1 -10 -4 Z" />
+            <path class="pin-marker-cloud" d="M -10 -4 A 8 8 0 0 1 -4 -12 A 12 12 0 0 1 12 -12 A 8 8 0 0 1 14 -4 A 6 6 0 0 1 -10 -4 Z" />
             <text class="pin-label" y="18">ONLINE PORTAL</text>
+          </g>
+          
+          <!-- SVG Amenity Pins -->
+          <!-- Restrooms -->
+          <g class="amenity-pin restrooms" transform="translate(640, 495)" style="display: none;">
+            <circle r="12" fill="#2980b9" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">🚻</text>
+          </g>
+          <g class="amenity-pin restrooms" transform="translate(465, 290)" style="display: none;">
+            <circle r="12" fill="#2980b9" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">🚻</text>
+          </g>
+          <g class="amenity-pin restrooms" transform="translate(725, 550)" style="display: none;">
+            <circle r="12" fill="#2980b9" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">🚻</text>
+          </g>
+          <!-- Food -->
+          <g class="amenity-pin food" transform="translate(665, 380)" style="display: none;">
+            <circle r="12" fill="#27ae60" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">🍔</text>
+          </g>
+          <g class="amenity-pin food" transform="translate(515, 580)" style="display: none;">
+            <circle r="12" fill="#27ae60" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">🍔</text>
+          </g>
+          <g class="amenity-pin food" transform="translate(395, 390)" style="display: none;">
+            <circle r="12" fill="#27ae60" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">🍔</text>
+          </g>
+          <!-- Charging -->
+          <g class="amenity-pin charging" transform="translate(435, 440)" style="display: none;">
+            <circle r="12" fill="#d35400" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">⚡</text>
+          </g>
+          <g class="amenity-pin charging" transform="translate(545, 420)" style="display: none;">
+            <circle r="12" fill="#d35400" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">⚡</text>
+          </g>
+          <g class="amenity-pin charging" transform="translate(425, 320)" style="display: none;">
+            <circle r="12" fill="#d35400" stroke="#fff" stroke-width="1.5"/>
+            <text y="4" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#fff">⚡</text>
           </g>
         </svg>
 
@@ -456,27 +518,55 @@
 
     <!-- Amenities chip rail (Page 4 FIX 4) -->
     <div class="amenities-chip-rail">
-      <div class="amenity-chip" onclick="triggerToast('Searching for Restrooms nearby... 🚻')">
+      <div class="amenity-chip" id="chip-restrooms" onclick="toggleMapAmenity('restrooms', this)">
         <i class="ti ti-restroom"></i><span>Restrooms</span>
       </div>
-      <div class="amenity-chip" onclick="triggerToast('Searching for Food Zones nearby... 🍔')">
+      <div class="amenity-chip" id="chip-food" onclick="toggleMapAmenity('food', this)">
         <i class="ti ti-cookie"></i><span>Food</span>
       </div>
-      <div class="amenity-chip" onclick="triggerToast('Searching for Charging Ports nearby... ⚡')">
+      <div class="amenity-chip" id="chip-charging" onclick="toggleMapAmenity('charging', this)">
         <i class="ti ti-battery-charging"></i><span>Charging</span>
       </div>
     </div>
 
     <!-- Route Panel (Page 4 FIX 2) -->
     <div class="route-panel glass-card" id="map-route-panel">
-      <div class="route-selector-row">
-        <div class="route-location-pill" id="route-origin">
-          <i class="ti ti-map-pin"></i><span>Main Stage</span>
-        </div>
-        <i class="ti ti-arrow-right" style="color: #8a7a60; font-size: 14px;"></i>
-        <div class="route-location-pill" id="route-destination">
-          <i class="ti ti-map-pin"></i><span>Workshop C</span>
-        </div>
+      <div class="route-selector-row" style="flex-wrap: wrap;">
+        <select id="route-origin" class="route-select-dropdown" onchange="updateMapRoute()">
+          <option value="Entire_Campus">Gajendra Circle (Center)</option>
+          <option value="OAT" selected>Open Air Theatre (OAT)</option>
+          <option value="DoMS">DoMS Plaza</option>
+          <option value="Biotech">Biotech Hall</option>
+          <option value="IC_SR">IC&amp;SR Complex</option>
+          <option value="SAC">SAC Grounds</option>
+          <option value="Wadhwani">Wadhwani School of AI</option>
+          <option value="NAC2">NAC2 Academic Block</option>
+          <option value="Campus_Hub">Campus Intel Hub</option>
+          <option value="Himalaya">Himalaya Lawn</option>
+          <option value="Sports_Zone">Gymkhana Sports Zone</option>
+          <option value="CLT">Central Lecture Theatre</option>
+          <option value="MSB">Mechanical Sciences Block</option>
+          <option value="Quark">Quark Lab Block</option>
+          <option value="UTIL">Utility Block</option>
+        </select>
+        <i class="ti ti-arrow-right" style="color: #8a7a60; font-size: 14px; margin: 0 4px;"></i>
+        <select id="route-destination" class="route-select-dropdown" onchange="updateMapRoute()">
+          <option value="Entire_Campus">Gajendra Circle (Center)</option>
+          <option value="OAT">Open Air Theatre (OAT)</option>
+          <option value="DoMS">DoMS Plaza</option>
+          <option value="Biotech">Biotech Hall</option>
+          <option value="IC_SR">IC&amp;SR Complex</option>
+          <option value="SAC">SAC Grounds</option>
+          <option value="Wadhwani" selected>Wadhwani School of AI</option>
+          <option value="NAC2">NAC2 Academic Block</option>
+          <option value="Campus_Hub">Campus Intel Hub</option>
+          <option value="Himalaya">Himalaya Lawn</option>
+          <option value="Sports_Zone">Gymkhana Sports Zone</option>
+          <option value="CLT">Central Lecture Theatre</option>
+          <option value="MSB">Mechanical Sciences Block</option>
+          <option value="Quark">Quark Lab Block</option>
+          <option value="UTIL">Utility Block</option>
+        </select>
       </div>
       
       <!-- Transit info (Page 4 FIX 3) -->
@@ -709,6 +799,79 @@
       </div>
       
       <button class="btn-primary" style="margin-top:20px;" onclick="closeModal('notifications-modal')">Close</button>
+    </div>
+  </div>
+
+  <!-- F. Profile Editor / Setup Modal -->
+  <div class="modal-overlay" id="profile-setup-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-profile-setup">
+    <div class="modal">
+      <div class="modal-drag"></div>
+      <div class="modal-title" id="modal-title-profile-setup">Configure Profile Details</div>
+      
+      <div class="form-group">
+        <label class="form-label" for="profile-input-name">Full Name</label>
+        <input class="form-input" id="profile-input-name" type="text" placeholder="e.g. Alex Mercer">
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="profile-input-role">Role / Affiliation</label>
+        <input class="form-input" id="profile-input-role" type="text" placeholder="e.g. Senior Data Architect">
+      </div>
+      
+      <div class="form-group" style="display: flex; align-items: center; gap: 20px; margin-top: 10px; border-top: 1px dashed var(--border); padding-top: 12px;">
+        <label class="form-label" style="margin-bottom: 0; flex: 1;">Pro Member Badge</label>
+        <input type="checkbox" id="profile-input-pro" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary);">
+      </div>
+      
+      <div class="form-group" style="display: flex; align-items: center; gap: 20px; margin-top: 10px; border-bottom: 1px dashed var(--border); padding-bottom: 12px;">
+        <label class="form-label" style="margin-bottom: 0; flex: 1;">Speaker Badge</label>
+        <input type="checkbox" id="profile-input-speaker" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary);">
+      </div>
+      
+      <button class="btn-primary" onclick="saveProfileDetails()">Save Profile</button>
+      <button class="btn-cancel" onclick="closeModal('profile-setup-modal')">Cancel</button>
+    </div>
+  </div>
+
+  <!-- First-Run Onboarding Screen overlay -->
+  <div id="onboarding-screen" class="onboarding-overlay" style="display: none;">
+    <div class="onboarding-card glass-card">
+      <div class="onboarding-header">
+        <h1 class="onboarding-title">PARADOX 2026</h1>
+        <p class="onboarding-subtitle">IIT Madras · Jun 09–14</p>
+      </div>
+      
+      <div class="onboarding-body" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="onboarding-intro">
+          Welcome to the official Paradox Navigator PWA! Please configure your attendee details below to customize your schedule tracker.
+        </div>
+        
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label" for="onboard-name" style="text-align: left;">👤 Full Name</label>
+          <input class="form-input" id="onboard-name" type="text" placeholder="e.g. Alex Mercer" required style="width: 100%;">
+        </div>
+        
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label" for="onboard-role" style="text-align: left;">💼 Role / Affiliation</label>
+          <input class="form-input" id="onboard-role" type="text" placeholder="e.g. Senior Data Architect" style="width: 100%;">
+        </div>
+        
+        <div class="form-group" style="display: flex; align-items: center; gap: 20px; margin-top: 5px; border-bottom: 1px dashed var(--border); padding-bottom: 8px;">
+          <label class="form-label" style="margin-bottom: 0; flex: 1; text-align: left;">⭐ Pro Student Premium Badge</label>
+          <input type="checkbox" id="onboard-input-pro" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary);">
+        </div>
+        
+        <div class="form-group" style="display: flex; align-items: center; gap: 20px; border-bottom: 1px dashed var(--border); padding-bottom: 8px;">
+          <label class="form-label" style="margin-bottom: 0; flex: 1; text-align: left;">🎤 Speaker / Presenter Badge</label>
+          <input type="checkbox" id="onboard-input-speaker" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary);">
+        </div>
+      </div>
+      
+      <div class="onboarding-footer" style="margin-top: 6px;">
+        <button class="btn-primary" onclick="completeOnboarding()" style="width: 100%; padding: 12px; font-size: 15px; font-weight: 700;">
+          Enter Paradox Navigator
+        </button>
+      </div>
     </div>
   </div>
 

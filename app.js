@@ -1,5 +1,6 @@
 // Spatio-temporal event registry
-const PARADOX_FALLBACK_STORE = {"venues":{"OAT":{"name":"Open Air Theatre","x":620,"y":480,"description":"Central cultural open arena"},"DoMS_Plaza":{"name":"Department of Management Studies","x":410,"y":390,"description":"Management and humanities wing"},"Biotech_Hall":{"name":"Department of Biotechnology","x":480,"y":290,"description":"Medical & Life Sciences wing"},"Ramanujan_Auditorium":{"name":"IC&SR Complex","x":530,"y":420,"description":"Main academic seminar center"},"SAC_Grounds":{"name":"Student Activity Center","x":710,"y":550,"description":"Sports and larger community spaces"},"Wadhwani_School":{"name":"School of Data Science & AI","x":450,"y":440,"description":"Core AI computing labs"},"Campus_Intelligence_Hub":{"name":"Campus Intelligence Hub","x":500,"y":580,"description":"Digital hunt and information desk central"},"Entire_Campus_Complex":{"name":"Entire Campus Complex","x":500,"y":500,"description":"Multiple locations across the IITM campus"},"Online_Portal":{"name":"Remote Interface","x":150,"y":150,"description":"Pre-Paradox digital portal modules"}},"events":[{"id":1,"title":"The Hoop Hustle 2.0 - Selection Round","time":"04:00 PM – 06:00 PM","day":"Jun 09","track":"sports","venue":"Basketball Court (Gymkhana)","desc":"Paradox 2026 sports session at the Basketball Court (Gymkhana).","conflictGroup":"jun09-slot-400pm","urgent":false},{"id":2,"title":"VolleyVibes - Trials","time":"04:30 PM – 06:30 PM","day":"Jun 09","track":"sports","venue":"Volleyball Court (Gymkhana) / Court Near Hostel Zone","desc":"Paradox 2026 sports session at the Volleyball Court (Gymkhana) / Court Near Hostel Zone.","conflictGroup":"jun09-slot-430pm","urgent":false},{"id":3,"title":"Instructors vs Organizers (Cricket)","time":"06:30 PM – 07:30 PM","day":"Jun 09","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun09-slot-630pm","urgent":false},{"id":4,"title":"Under the Stars","time":"07:00 PM – 08:00 PM","day":"Jun 09","track":"social","venue":"Himalaya Lawn","desc":"Paradox 2026 social session at the Himalaya Lawn.","conflictGroup":"jun09-slot-700pm","urgent":false},{"id":5,"title":"Paradox Champions League - Trials","time":"06:00 AM – 08:00 AM","day":"Jun 10","track":"sports","venue":"Football Ground (Gymkhana)","desc":"Paradox 2026 sports session at the Football Ground (Gymkhana).","conflictGroup":"jun10-slot-600am","urgent":false},{"id":6,"title":"Paradox Premier League 3.0 - Trials","time":"06:00 AM – 08:00 AM","day":"Jun 10","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun10-slot-600am","urgent":false},{"id":7,"title":"Sprintsaga - 100m, 400m","time":"06:00 AM – 07:00 AM","day":"Jun 10","track":"sports","venue":"Manohar C Watsa Stadium","desc":"Paradox 2026 sports session at the Manohar C Watsa Stadium.","conflictGroup":"jun10-slot-600am","urgent":false},{"id":8,"title":"Opening Ceremony","time":"09:30 AM – 10:30 AM","day":"Jun 10","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun10-slot-930am","urgent":false},{"id":9,"title":"CrashLab: Collegiate Air Crash Investigation Challenge - Round 1","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"RJN102","desc":"Paradox 2026 competition session at the RJN102.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":10,"title":"Probably Paradoxical - Round 1 - Problem Statement Release","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"RJN101","desc":"Paradox 2026 competition session at the RJN101.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":11,"title":"Python Coding Challenge 5.0 - Round 1","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"RJN201","desc":"Paradox 2026 competition session at the RJN201.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":12,"title":"RoboSoccer 5.0 - Initial Rounds","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"ICSR Hall 4 (Exhibition Hall)","desc":"Paradox 2026 competition session at the ICSR Hall 4 (Exhibition Hall).","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":13,"title":"Samvaad 2.0 - Interaction Session","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"workshop","venue":"ICSR Hall 3","desc":"Paradox 2026 workshop session at the ICSR Hall 3.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":14,"title":"We Found You Online - Day 1 - Guest Session","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"osint","venue":"RJN202","desc":"Paradox 2026 osint session at the RJN202.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":15,"title":"Chronos Crossfire - Round Robin Part 1","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"Quark","desc":"Paradox 2026 competition session at the Quark.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":16,"title":"IPL Auction Showdown 4.0 - Day 1","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"competition","venue":"RMN202","desc":"Paradox 2026 competition session at the RMN202.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":17,"title":"Capitol Conclave - Debate Rounds","time":"12:30 PM – 03:30 PM","day":"Jun 10","track":"competition","venue":"RMN101","desc":"Paradox 2026 competition session at the RMN101.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":18,"title":"Youth Parliament","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"social","venue":"DOMS101 (Tentative)","desc":"Paradox 2026 social session at the DOMS101 (Tentative).","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":19,"title":"Rants and Riffs (All Rounds)","time":"12:30 PM – 03:30 PM","day":"Jun 10","track":"social","venue":"RMN102","desc":"Paradox 2026 social session at the RMN102.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":20,"title":"Unwind - Instrumental","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"social","venue":"Music Room","desc":"Paradox 2026 social session at the Music Room.","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":21,"title":"Manch of Traders - Sponsor BootCamp","time":"02:00 PM – 03:00 PM","day":"Jun 10","track":"workshop","venue":"TTJ","desc":"Paradox 2026 workshop session at the TTJ.","conflictGroup":"jun10-slot-200pm","urgent":false},{"id":22,"title":"Ranneeti 5.0 BGMI - Finals 1","time":"02:00 PM – 04:00 PM","day":"Jun 10","track":"competition","venue":"RMN201","desc":"Paradox 2026 competition session at the RMN201.","conflictGroup":"jun10-slot-200pm","urgent":false},{"id":23,"title":"Paradox Badminton League - Trials","time":"03:00 PM – 05:00 PM","day":"Jun 10","track":"sports","venue":"Sitara Indoor Sports Complex (Gymkhana)","desc":"Paradox 2026 sports session at the Sitara Indoor Sports Complex (Gymkhana).","conflictGroup":"jun10-slot-300pm","urgent":false},{"id":24,"title":"Last1Standing - Task Rush","time":"03:30 PM – 04:30 PM","day":"Jun 10","track":"competition","venue":"KV Ground","desc":"Paradox 2026 competition session at the KV Ground.","conflictGroup":"jun10-slot-330pm","urgent":false},{"id":25,"title":"Anime Jeopardy Initial Rounds (2-3)","time":"04:00 PM – 06:00 PM","day":"Jun 10","track":"competition","venue":"RMN101","desc":"Paradox 2026 competition session at the RMN101.","conflictGroup":"jun10-slot-400pm","urgent":false},{"id":26,"title":"Anubhuti Semi Final","time":"04:00 PM – 05:00 PM","day":"Jun 10","track":"competition","venue":"RMN102","desc":"Paradox 2026 competition session at the RMN102.","conflictGroup":"jun10-slot-400pm","urgent":false},{"id":27,"title":"D2D - Workshop","time":"04:00 PM – 05:00 PM","day":"Jun 10","track":"workshop","venue":"UTIL","desc":"Paradox 2026 workshop session at the UTIL.","conflictGroup":"jun10-slot-400pm","urgent":false},{"id":28,"title":"The Hoop Hustle 2.0 - Knockout Round","time":"04:00 PM – 06:00 PM","day":"Jun 10","track":"sports","venue":"Basketball Court (Gymkhana)","desc":"Paradox 2026 sports session at the Basketball Court (Gymkhana).","conflictGroup":"jun10-slot-400pm","urgent":false},{"id":29,"title":"VolleyVibes - Group Stage","time":"04:30 PM – 05:30 PM","day":"Jun 10","track":"sports","venue":"Volleyball Court (Gymkhana) / Court Near Hostel Zone","desc":"Paradox 2026 sports session at the Volleyball Court (Gymkhana) / Court Near Hostel Zone.","conflictGroup":"jun10-slot-430pm","urgent":false},{"id":30,"title":"Paradox Premier League 3.0 - Trials","time":"04:30 PM – 06:30 PM","day":"Jun 10","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun10-slot-430pm","urgent":false},{"id":31,"title":"Sufi Night","time":"07:30 PM – 09:30 PM","day":"Jun 10","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun10-slot-730pm","urgent":false},{"id":32,"title":"The Burn Club - Zumba Workshop","time":"05:00 AM – 06:00 AM","day":"Jun 11","track":"sports","venue":"OAT","desc":"Paradox 2026 sports session at the OAT.","conflictGroup":"jun11-slot-500am","urgent":false},{"id":33,"title":"Kampus Run","time":"05:00 AM – 06:00 AM","day":"Jun 11","track":"sports","venue":"Campus","desc":"Paradox 2026 sports session at the Campus.","conflictGroup":"jun11-slot-500am","urgent":false},{"id":34,"title":"Paradox Premier League 3.0 - Knockouts","time":"06:00 AM – 07:00 AM","day":"Jun 11","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun11-slot-600am","urgent":false},{"id":35,"title":"RoboSoccer 5.0 - Semi-finals and Final Rounds","time":"09:00 AM – 11:00 AM","day":"Jun 11","track":"competition","venue":"ICSR Hall 4 (Exhibition Hall)","desc":"Paradox 2026 competition session at the ICSR Hall 4 (Exhibition Hall).","conflictGroup":"jun11-slot-900am","urgent":false},{"id":36,"title":"Squid Games - Morning Half","time":"09:00 AM – 12:00 PM","day":"Jun 11","track":"sports","venue":"KV Ground","desc":"Paradox 2026 sports session at the KV Ground.","conflictGroup":"jun11-slot-900am","urgent":false},{"id":37,"title":"Quotopia - Prelims","time":"10:00 AM – 11:00 AM","day":"Jun 11","track":"competition","venue":"CLT","desc":"Paradox 2026 competition session at the CLT.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":38,"title":"Circuit Design Competition 2.0 - First Round (Simulation)","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RJN101","desc":"Paradox 2026 competition session at the RJN101.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":39,"title":"CrashLab: Collegiate Air Crash Investigation Challenge - Final Round","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"ICSR Hall 2","desc":"Paradox 2026 competition session at the ICSR Hall 2.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":40,"title":"DSA Triathlon 3.0 - Initial Round","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RJM302","desc":"Paradox 2026 competition session at the RJM302.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":41,"title":"Manch of Traders - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"ICSR Hall 3","desc":"Paradox 2026 competition session at the ICSR Hall 3.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":42,"title":"Probably Paradoxical - Round 1 Invigilation","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RJN102","desc":"Paradox 2026 competition session at the RJN102.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":43,"title":"Python Coding Challenge 5.0 - Round 2 & Final Round","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RJN201","desc":"Paradox 2026 competition session at the RJN201.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":44,"title":"Research: To Infinity & Beyond - Competition","time":"10:00 AM – 11:00 AM","day":"Jun 11","track":"research","venue":"RJN202","desc":"Paradox 2026 research session at the RJN202.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":45,"title":"We Found You Online - Round Progression","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"osint","venue":"RJN301","desc":"Paradox 2026 osint session at the RJN301.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":46,"title":"Chronos Crossfire - Round Robin Part 2","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"Quark","desc":"Paradox 2026 competition session at the Quark.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":47,"title":"Ranneeti 5.0 BGMI - Finals 2","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"MSB 208 / Chem Dept 204, 205 / DOMS 101","desc":"Paradox 2026 competition session at the MSB 208 / Chem Dept 204, 205 / DOMS 101.","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":48,"title":"Paradox Badminton League - Group Stage","time":"10:00 AM – 11:00 AM","day":"Jun 11","track":"sports","venue":"Sitara Indoor Sports Complex (Gymkhana)","desc":"Paradox 2026 sports session at the Sitara Indoor Sports Complex (Gymkhana).","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":49,"title":"Escape Room - Semi Finals","time":"10:30 AM – 12:30 PM","day":"Jun 11","track":"competition","venue":"RMN302","desc":"Paradox 2026 competition session at the RMN302.","conflictGroup":"jun11-slot-1030am","urgent":false},{"id":50,"title":"IPL Auction Showdown 4.0 - Day 2 (Final)","time":"11:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RMN301 / 202","desc":"Paradox 2026 competition session at the RMN301 / 202.","conflictGroup":"jun11-slot-1100am","urgent":false},{"id":51,"title":"Unwind - Vocal","time":"11:30 AM – 12:30 PM","day":"Jun 11","track":"social","venue":"RMN101","desc":"Paradox 2026 social session at the RMN101.","conflictGroup":"jun11-slot-1130am","urgent":false},{"id":52,"title":"Ranneeti 5.0 Pocket Arcade - Stage 1","time":"12:00 PM – 01:00 PM","day":"Jun 11","track":"competition","venue":"RMN201 & 202","desc":"Paradox 2026 competition session at the RMN201 & 202.","conflictGroup":"jun11-slot-1200pm","urgent":false},{"id":53,"title":"Pictionary Art Relay","time":"12:00 PM – 01:00 PM","day":"Jun 11","track":"competition","venue":"RMN102 (Biggest classroom)","desc":"Paradox 2026 competition session at the RMN102 (Biggest classroom).","conflictGroup":"jun11-slot-1200pm","urgent":false},{"id":54,"title":"Ranneeti 5.0 Valorant - Quarter-Finals","time":"02:00 PM – 04:00 PM","day":"Jun 11","track":"competition","venue":"MSB 208 / Chem Dept 204, 205 / DOMS 101","desc":"Paradox 2026 competition session at the MSB 208 / Chem Dept 204, 205 / DOMS 101.","conflictGroup":"jun11-slot-200pm","urgent":false},{"id":55,"title":"Stand Up Comedy Showdown","time":"02:00 PM – 03:00 PM","day":"Jun 11","track":"social","venue":"CLT","desc":"Paradox 2026 social session at the CLT.","conflictGroup":"jun11-slot-200pm","urgent":false},{"id":56,"title":"Anime Jeopardy Final Rounds (4-5)","time":"02:30 PM – 04:30 PM","day":"Jun 11","track":"competition","venue":"RMN (Least priority)","desc":"Paradox 2026 competition session at the RMN (Least priority).","conflictGroup":"jun11-slot-230pm","urgent":false},{"id":57,"title":"Sprintsaga - Shot Put, Discus Throw","time":"03:00 PM – 04:00 PM","day":"Jun 11","track":"sports","venue":"KV Ground","desc":"Paradox 2026 sports session at the KV Ground.","conflictGroup":"jun11-slot-300pm","urgent":false},{"id":58,"title":"Squid Games - Evening Half","time":"03:00 PM – 06:00 PM","day":"Jun 11","track":"sports","venue":"KV Ground","desc":"Paradox 2026 sports session at the KV Ground.","conflictGroup":"jun11-slot-300pm","urgent":false},{"id":59,"title":"Paradox Premier League 3.0 - Knockouts","time":"03:30 PM – 04:30 PM","day":"Jun 11","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun11-slot-330pm","urgent":false},{"id":60,"title":"The Hoop Hustle 2.0 - Men's Quarter & Semi Final, Women's Finals","time":"03:30 PM – 05:30 PM","day":"Jun 11","track":"sports","venue":"Basketball Court (Gymkhana)","desc":"Paradox 2026 sports session at the Basketball Court (Gymkhana).","conflictGroup":"jun11-slot-330pm","urgent":false},{"id":61,"title":"Paradox Champions League - Group Stage","time":"03:30 PM – 04:30 PM","day":"Jun 11","track":"sports","venue":"Football Ground (Gymkhana)","desc":"Paradox 2026 sports session at the Football Ground (Gymkhana).","conflictGroup":"jun11-slot-330pm","urgent":false},{"id":62,"title":"VolleyVibes - Semi-Finals","time":"04:00 PM – 06:00 PM","day":"Jun 11","track":"sports","venue":"Volleyball Court (Gymkhana) / Court Near Hostel Zone","desc":"Paradox 2026 sports session at the Volleyball Court (Gymkhana) / Court Near Hostel Zone.","conflictGroup":"jun11-slot-400pm","urgent":false},{"id":63,"title":"Sach, Scroll aur Shuturmurg Street Play","time":"05:00 PM – 06:00 PM","day":"Jun 11","track":"social","venue":"Outside SAC","desc":"Paradox 2026 social session at the Outside SAC.","conflictGroup":"jun11-slot-500pm","urgent":false},{"id":64,"title":"DJ Night","time":"07:00 PM – 09:00 PM","day":"Jun 11","track":"social","venue":"OAT","desc":"Paradox 2026 social session at the OAT.","conflictGroup":"jun11-slot-700pm","urgent":false},{"id":65,"title":"Sprintsaga - Relays","time":"06:00 AM – 07:00 AM","day":"Jun 12","track":"sports","venue":"Manohar C Watsa Stadium","desc":"Paradox 2026 sports session at the Manohar C Watsa Stadium.","conflictGroup":"jun12-slot-600am","urgent":false},{"id":66,"title":"Paradox Premier League 3.0 - Super Knockouts","time":"06:30 AM – 07:30 AM","day":"Jun 12","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun12-slot-630am","urgent":false},{"id":67,"title":"Paradox Champions League - Semi-Finals","time":"07:00 AM – 09:00 AM","day":"Jun 12","track":"sports","venue":"Football Ground (Gymkhana)","desc":"Paradox 2026 sports session at the Football Ground (Gymkhana).","conflictGroup":"jun12-slot-700am","urgent":false},{"id":68,"title":"Last1Standing - Dual Challenge","time":"08:00 AM – 09:00 AM","day":"Jun 12","track":"competition","venue":"KV Ground","desc":"Paradox 2026 competition session at the KV Ground.","conflictGroup":"jun12-slot-800am","urgent":false},{"id":69,"title":"RoboSoccer 5.0 - Final Round (ext) + Free Play","time":"09:00 AM – 11:00 AM","day":"Jun 12","track":"competition","venue":"ICSR Hall 4 (Exhibition Hall)","desc":"Paradox 2026 competition session at the ICSR Hall 4 (Exhibition Hall).","conflictGroup":"jun12-slot-900am","urgent":false},{"id":70,"title":"Chronos Crossfire - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 12","track":"competition","venue":"Quark","desc":"Paradox 2026 competition session at the Quark.","conflictGroup":"jun12-slot-1000am","urgent":false},{"id":71,"title":"Paradox Badminton League - Semi-Finals","time":"10:00 AM – 12:00 PM","day":"Jun 12","track":"sports","venue":"Sitara Indoor Sports Complex (Gymkhana)","desc":"Paradox 2026 sports session at the Sitara Indoor Sports Complex (Gymkhana).","conflictGroup":"jun12-slot-1000am","urgent":false},{"id":72,"title":"Interaction Session with Professors","time":"10:00 AM – 11:00 AM","day":"Jun 12","track":"workshop","venue":"CLT","desc":"Paradox 2026 workshop session at the CLT.","conflictGroup":"jun12-slot-1000am","urgent":false},{"id":73,"title":"Escape Room - Finals","time":"10:30 AM – 12:30 PM","day":"Jun 12","track":"competition","venue":"UTIL","desc":"Paradox 2026 competition session at the UTIL.","conflictGroup":"jun12-slot-1030am","urgent":false},{"id":74,"title":"Last1Standing - Steal or No Steal","time":"11:00 AM – 12:00 PM","day":"Jun 12","track":"competition","venue":"RMN102","desc":"Paradox 2026 competition session at the RMN102.","conflictGroup":"jun12-slot-1100am","urgent":false},{"id":75,"title":"Circuit Design Competition 2.0 - Final Round (Hardware Demo)","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"Old IE or New IE","desc":"Paradox 2026 competition session at the Old IE or New IE.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":76,"title":"DSA Triathlon 3.0 - Final Round","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"ICSR Hall 2","desc":"Paradox 2026 competition session at the ICSR Hall 2.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":77,"title":"Echo//Prometheus - Investigation Rounds","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"Campus","desc":"Paradox 2026 competition session at the Campus.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":78,"title":"Probably Paradoxical - Final Round","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"RJN102","desc":"Paradox 2026 competition session at the RJN102.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":79,"title":"We Found You Online - Round Progression","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"osint","venue":"RJN101","desc":"Paradox 2026 osint session at the RJN101.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":80,"title":"Final Lap: Formula Racing - Round Progression","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"Not Specified","desc":"Paradox 2026 competition session at the Not Specified.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":81,"title":"GadgetXpo 2.0 - Finals","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"RJN201","desc":"Paradox 2026 competition session at the RJN201.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":82,"title":"RopeWalker - Round Progression","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"Not Specified","desc":"Paradox 2026 competition session at the Not Specified.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":83,"title":"Capitol Conclave - Finale","time":"12:30 PM – 03:30 PM","day":"Jun 12","track":"competition","venue":"RMN201","desc":"Paradox 2026 competition session at the RMN201.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":84,"title":"Youth Parliament - Finale","time":"12:30 PM – 01:30 PM","day":"Jun 12","track":"social","venue":"DOMS101 (Tentative)","desc":"Paradox 2026 social session at the DOMS101 (Tentative).","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":85,"title":"Anubhuti - Finale","time":"12:30 PM – 01:30 PM","day":"Jun 12","track":"competition","venue":"RMN202","desc":"Paradox 2026 competition session at the RMN202.","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":86,"title":"Ranneeti 5.0 Pocket Arcade - Stage 2","time":"01:00 PM – 02:00 PM","day":"Jun 12","track":"competition","venue":"RMN102","desc":"Paradox 2026 competition session at the RMN102.","conflictGroup":"jun12-slot-100pm","urgent":false},{"id":87,"title":"Research: To Infinity & Beyond - Guest Session","time":"02:00 PM – 03:00 PM","day":"Jun 12","track":"research","venue":"ICSR Hall 3","desc":"Paradox 2026 research session at the ICSR Hall 3.","conflictGroup":"jun12-slot-200pm","urgent":false},{"id":88,"title":"GoBoxd","time":"02:00 PM – 03:00 PM","day":"Jun 12","track":"competition","venue":"RJN201","desc":"Paradox 2026 competition session at the RJN201.","conflictGroup":"jun12-slot-200pm","urgent":false},{"id":89,"title":"Quotopia - Finale","time":"02:30 PM – 03:30 PM","day":"Jun 12","track":"competition","venue":"RMN201","desc":"Paradox 2026 competition session at the RMN201.","conflictGroup":"jun12-slot-230pm","urgent":false},{"id":90,"title":"Sach, Scroll aur Shuturmurg Street Play","time":"03:00 PM – 04:00 PM","day":"Jun 12","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun12-slot-300pm","urgent":false},{"id":91,"title":"Ranneeti 5.0 Valorant - Semi-Finals","time":"04:00 PM – 06:00 PM","day":"Jun 12","track":"competition","venue":"RMN101","desc":"Paradox 2026 competition session at the RMN101.","conflictGroup":"jun12-slot-400pm","urgent":false},{"id":92,"title":"D2D SDB + Flash Mob","time":"05:00 PM – 06:00 PM","day":"Jun 12","track":"social","venue":"Himalaya Lawn","desc":"Paradox 2026 social session at the Himalaya Lawn.","conflictGroup":"jun12-slot-500pm","urgent":false},{"id":93,"title":"The Hoop Hustle 2.0 - Men's Finals","time":"05:00 PM – 07:00 PM","day":"Jun 12","track":"sports","venue":"Basketball Court (Gymkhana)","desc":"Paradox 2026 sports session at the Basketball Court (Gymkhana).","conflictGroup":"jun12-slot-500pm","urgent":false},{"id":94,"title":"Paradox Premier League 3.0 - Eliminators","time":"05:00 PM – 06:00 PM","day":"Jun 12","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun12-slot-500pm","urgent":false},{"id":95,"title":"VolleyVibes - Finals","time":"05:00 PM – 07:00 PM","day":"Jun 12","track":"sports","venue":"Volleyball Court (Gymkhana) / Court Near Hostel Zone","desc":"Paradox 2026 sports session at the Volleyball Court (Gymkhana) / Court Near Hostel Zone.","conflictGroup":"jun12-slot-500pm","urgent":false},{"id":96,"title":"Unwind - Finale","time":"07:00 PM – 08:00 PM","day":"Jun 12","track":"social","venue":"OAT","desc":"Paradox 2026 social session at the OAT.","conflictGroup":"jun12-slot-700pm","urgent":false},{"id":97,"title":"Paradox Premier League 3.0 - PPL CricQueens","time":"07:00 AM – 08:00 AM","day":"Jun 13","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun13-slot-700am","urgent":false},{"id":98,"title":"Paradox Champions League - Finals","time":"07:00 AM – 09:00 AM","day":"Jun 13","track":"sports","venue":"Football Ground (Gymkhana)","desc":"Paradox 2026 sports session at the Football Ground (Gymkhana).","conflictGroup":"jun13-slot-700am","urgent":false},{"id":99,"title":"Echo//Prometheus - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"competition","venue":"Campus","desc":"Paradox 2026 competition session at the Campus.","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":100,"title":"We Found You Online - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"osint","venue":"RJM101","desc":"Paradox 2026 osint session at the RJM101.","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":101,"title":"Last1Standing - Points Championship","time":"10:00 AM – 11:00 AM","day":"Jun 13","track":"sports","venue":"RMN201","desc":"Paradox 2026 sports session at the RMN201.","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":102,"title":"Paradox Badminton League - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"sports","venue":"Sitara Indoor Sports Complex (Gymkhana)","desc":"Paradox 2026 sports session at the Sitara Indoor Sports Complex (Gymkhana).","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":103,"title":"Paradox Got Talent - Finale","time":"11:00 AM – 12:00 PM","day":"Jun 13","track":"social","venue":"CLT","desc":"Paradox 2026 social session at the CLT.","conflictGroup":"jun13-slot-1100am","urgent":false},{"id":104,"title":"Shutter Safari","time":"11:30 AM – 12:30 PM","day":"Jun 13","track":"competition","venue":"RMN102","desc":"Paradox 2026 competition session at the RMN102.","conflictGroup":"jun13-slot-1130am","urgent":false},{"id":105,"title":"Ranneeti 5.0 Pocket Arcade - Stage 3 (Final)","time":"01:00 PM – 02:00 PM","day":"Jun 13","track":"competition","venue":"RMN101","desc":"Paradox 2026 competition session at the RMN101.","conflictGroup":"jun13-slot-100pm","urgent":false},{"id":106,"title":"D2D","time":"02:00 PM – 03:00 PM","day":"Jun 13","track":"workshop","venue":"SAC","desc":"Paradox 2026 workshop session at the SAC.","conflictGroup":"jun13-slot-200pm","urgent":false},{"id":107,"title":"Escape Room - Pitching Round","time":"02:30 PM – 04:30 PM","day":"Jun 13","track":"competition","venue":"ICSR Hall 3","desc":"Paradox 2026 competition session at the ICSR Hall 3.","conflictGroup":"jun13-slot-230pm","urgent":false},{"id":108,"title":"Ranneeti 5.0 Valorant - Finals","time":"03:00 PM – 05:00 PM","day":"Jun 13","track":"competition","venue":"RMN201","desc":"Paradox 2026 competition session at the RMN201.","conflictGroup":"jun13-slot-300pm","urgent":false},{"id":109,"title":"Paradox Premier League 3.0 - Finals","time":"05:00 PM – 07:00 PM","day":"Jun 13","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun13-slot-500pm","urgent":false},{"id":110,"title":"Mr & Mrs Paradox","time":"05:00 PM – 06:00 PM","day":"Jun 13","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun13-slot-500pm","urgent":false},{"id":111,"title":"Rapadox","time":"07:00 PM – 08:00 PM","day":"Jun 13","track":"social","venue":"Himalaya Lawn","desc":"Paradox 2026 social session at the Himalaya Lawn.","conflictGroup":"jun13-slot-700pm","urgent":false},{"id":112,"title":"Closing Ceremony","time":"02:00 PM – 03:00 PM","day":"Jun 14","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun14-slot-200pm","urgent":false},{"id":113,"title":"Chromatix - Showcase","time":"02:00 PM – 03:00 PM","day":"Jun 14","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun14-slot-200pm","urgent":false},{"id":114,"title":"Representation Learning in Biology: Biomolecular Embeddings","time":"02:00 PM – 04:00 PM","day":"Jun 10","track":"workshop","venue":"Wadhwani School of AI","desc":"Extracting vector spaces and biological embeddings using ESM and DNABERT models.","conflictGroup":"jun10-slot-200pm","urgent":false},{"id":115,"title":"From Syntax to Sentience: Classical NLP to LLMs","time":"02:00 PM – 04:00 PM","day":"Jun 10","track":"workshop","venue":"IC&SR Complex","desc":"Deep dive from traditional parsing models to decoder-only large language models.","conflictGroup":"jun10-slot-200pm","urgent":false},{"id":116,"title":"Optimisation in Machine Learning","time":"02:00 PM – 04:00 PM","day":"Jun 11","track":"workshop","venue":"Wadhwani School of AI","desc":"Gradient descent variations, convergence bounds, and optimizer heuristics by Prof. Harish Guruprasad.","conflictGroup":"jun11-slot-200pm","urgent":false},{"id":117,"title":"From Chatbots to Autonomous Agents","time":"02:00 PM – 04:00 PM","day":"Jun 11","track":"workshop","venue":"Department of Management Studies","desc":"Building self-correcting agent chains and multi-agent systems with Shabareesh Raj.","conflictGroup":"jun11-slot-200pm","urgent":false},{"id":118,"title":"AI-Powered Precision Health at Scale","time":"10:00 AM – 12:00 PM","day":"Jun 12","track":"workshop","venue":"Department of Biotechnology","desc":"Applying computational methods to electronic health records and genomic sequencing datasets with Dr. Naveen Sivadasan.","conflictGroup":"jun12-slot-1000am","urgent":false},{"id":119,"title":"Context is the New Compute: Engineering Retrieval Systems","time":"10:00 AM – 12:00 PM","day":"Jun 12","track":"workshop","venue":"IC&SR Complex","desc":"Vector database indexing strategies, chunking optimization, and hybrid search pipelines.","conflictGroup":"jun12-slot-1000am","urgent":false},{"id":120,"title":"Playing with AI - Autonomous Agentic Systems 101","time":"02:00 PM – 04:00 PM","day":"Jun 12","track":"workshop","venue":"Wadhwani School of AI","desc":"Hands-on lab for building and running local execution agents.","conflictGroup":"jun12-slot-200pm","urgent":false},{"id":121,"title":"Sports Analytics & AI Workshop","time":"02:00 PM – 04:00 PM","day":"Jun 12","track":"workshop","venue":"Student Activity Center","desc":"Data collection methods in sports and predictive modeling of player workload with Dr. Babji Srinivasan.","conflictGroup":"jun12-slot-200pm","urgent":false},{"id":122,"title":"Beyond Next-Token Prediction in Multimodal AI Models","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"workshop","venue":"Wadhwani School of AI","desc":"Exploring system-2 reasoning in LLMs, diffusion policies, and multimodal grounding.","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":123,"title":"Five Mistakes Data Scientists Make & How Economics Fixes Them","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"workshop","venue":"Department of Management Studies","desc":"Identifying confounding variables, selection bias, and economic counterfactuals.","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":124,"title":"Data Science with Coding Agents: Masterclass on SLMs","time":"02:00 PM – 04:00 PM","day":"Jun 13","track":"workshop","venue":"Wadhwani School of AI","desc":"Leveraging smaller language models for specialized code generation and data parsing tasks.","conflictGroup":"jun13-slot-200pm","urgent":false},{"id":125,"title":"Why Most AI Systems Fail and How to Build Ones That Don't","time":"02:00 PM – 04:00 PM","day":"Jun 13","track":"workshop","venue":"IC&SR Complex","desc":"Analyzing distribution shifts, data leakage, and designing robust monitoring pipelines.","conflictGroup":"jun13-slot-200pm","urgent":false}]};
+// Spatio-temporal event registry
+const PARADOX_FALLBACK_STORE = {"venues":{"OAT":{"name":"Open Air Theatre","x":620,"y":480,"description":"Central cultural open arena"},"DoMS_Plaza":{"name":"Department of Management Studies","x":410,"y":390,"description":"Management and humanities wing"},"Biotech_Hall":{"name":"Department of Biotechnology","x":480,"y":290,"description":"Medical & Life Sciences wing"},"Ramanujan_Auditorium":{"name":"IC&SR Complex","x":530,"y":420,"description":"Main academic seminar center"},"SAC_Grounds":{"name":"Student Activity Center","x":710,"y":550,"description":"Sports and larger community spaces"},"Wadhwani_School":{"name":"School of Data Science & AI","x":450,"y":440,"description":"Core AI computing labs"},"Campus_Intelligence_Hub":{"name":"Campus Intelligence Hub","x":500,"y":580,"description":"Digital hunt and information desk central"},"Entire_Campus_Complex":{"name":"Entire Campus Complex","x":500,"y":500,"description":"Multiple locations across the IITM campus"},"Online_Portal":{"name":"Remote Interface","x":150,"y":150,"description":"Pre-Paradox digital portal modules"}},"events":[{"id":1,"title":"The Hoop Hustle 2.0 - Selection Round","time":"04:00 PM – 06:00 PM","day":"Jun 09","track":"sports","venue":"Basketball Court (Gymkhana)","desc":"The ultimate basketball knockout challenge. Shoot, score, dominate. ","conflictGroup":"jun09-slot-400pm","urgent":false},{"id":2,"title":"VolleyVibes - Trials","time":"04:30 PM – 06:30 PM","day":"Jun 09","track":"sports","venue":"Volleyball Court (Gymkhana) / Court Near Hostel Zone","desc":"Spike it like a pro. The ultimate volleyball trials and final rounds. ","conflictGroup":"jun09-slot-430pm","urgent":false},{"id":3,"title":"Instructors vs Organizers (Cricket)","time":"06:30 PM – 07:30 PM","day":"Jun 09","track":"sports","venue":"Sangam Ground","desc":"Paradox 2026 sports session at the Sangam Ground.","conflictGroup":"jun09-slot-630pm","urgent":false},{"id":4,"title":"Under the Stars","time":"07:00 PM – 08:00 PM","day":"Jun 09","track":"social","venue":"Himalaya Lawn","desc":"Paradox 2026 social session at the Himalaya Lawn.","conflictGroup":"jun09-slot-700pm","urgent":false},{"id":5,"title":"Paradox Champions League - Trials","time":"06:00 AM – 08:00 AM","day":"Jun 10","track":"sports","venue":"Football Ground (Gymkhana)","desc":"Collegiate football championship. The ultimate battle on the green turf. ","conflictGroup":"jun10-slot-600am","urgent":false},{"id":6,"title":"Paradox Premier League 3.0 - Trials","time":"06:00 AM – 08:00 AM","day":"Jun 10","track":"sports","venue":"Sangam Ground","desc":"The ultimate cricket tournament. Pitch battles and clean hits. ","conflictGroup":"jun10-slot-600am","urgent":false},{"id":7,"title":"Sprintsaga - 100m, 400m","time":"06:00 AM – 07:00 AM","day":"Jun 10","track":"sports","venue":"Manohar C Watsa Stadium","desc":"Track and field athletics. Test your speed in 100m, 400m, and relays. ","conflictGroup":"jun10-slot-600am","urgent":false},{"id":8,"title":"Opening Ceremony","time":"09:30 AM – 10:30 AM","day":"Jun 10","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun10-slot-930am","urgent":false},{"id":9,"title":"CrashLab: Collegiate Air Crash Investigation Challenge - Round 1","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"RJN102","desc":"Collegiate Air Crash Investigation Challenge. The Devil is in the DATA. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":10,"title":"Probably Paradoxical - Round 1 - Problem Statement Release","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"RJN101","desc":"Probability and statistics problem-solving challenge. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":11,"title":"Python Coding Challenge 5.0 - Round 1","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"RJN201","desc":"Python programming contest. The ultimate code quest. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":12,"title":"RoboSoccer 5.0 - Initial Rounds","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"ICSR Hall 4 (Exhibition Hall)","desc":"Autonomous soccer bots clash. Kick off the AI soccer challenge. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":13,"title":"Samvaad 2.0 - Interaction Session","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"workshop","venue":"ICSR Hall 3","desc":"Interactive student dialogue and panels on key student issues. ","conflictGroup":"jun10-slot-1230pm","urgent":false,"speaker":"Prof. IIT Madras"},{"id":14,"title":"We Found You Online - Day 1 - Guest Session","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"osint","venue":"RJN202","desc":"OSINT challenge. You thought no one noticed! Find the hidden flags. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":15,"title":"Chronos Crossfire - Round Robin Part 1","time":"12:30 PM – 02:30 PM","day":"Jun 10","track":"competition","venue":"Quark","desc":"Round-robin sports simulation. Experience the thrill of fast-paced sports. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":16,"title":"IPL Auction Showdown 4.0 - Day 1","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"competition","venue":"RMN202","desc":"Bid smart, build a winning squad, and dominate the auction floor. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":17,"title":"Capitol Conclave - Debate Rounds","time":"12:30 PM – 03:30 PM","day":"Jun 10","track":"competition","venue":"RMN101","desc":"The ultimate parliamentary debate challenge. Speak. Argue. Conquer. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":18,"title":"Youth Parliament","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"social","venue":"DOMS101 (Tentative)","desc":"A mock simulation of India's parliamentary debates and policy framing. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":19,"title":"Rants and Riffs (All Rounds)","time":"12:30 PM – 03:30 PM","day":"Jun 10","track":"social","venue":"RMN102","desc":"Let your voice, emotions, and music blend. Express yourself. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":20,"title":"Unwind - Instrumental","time":"12:30 PM – 01:30 PM","day":"Jun 10","track":"social","venue":"Music Room","desc":"A musical evening of soothing instrumental and vocal acoustic tracks. ","conflictGroup":"jun10-slot-1230pm","urgent":false},{"id":21,"title":"Manch of Traders - Sponsor BootCamp","time":"02:00 PM – 03:00 PM","day":"Jun 10","track":"workshop","venue":"TTJ","desc":"Where Strategy Meets the Market. The ultimate trading simulation. ","conflictGroup":"jun10-slot-200pm","urgent":false,"speaker":"Prof. IIT Madras"},{"id":22,"title":"Ranneeti 5.0 BGMI - Finals 1","time":"02:00 PM – 04:00 PM","day":"Jun 10","track":"competition","venue":"RMN201","desc":"Ranneeti 5.0 Battlegrounds Mobile India. Drop, loot, survive. ","conflictGroup":"jun10-slot-200pm","urgent":false},{"id":23,"title":"Paradox Badminton League - Trials","time":"03:00 PM – 05:00 PM","day":"Jun 10","track":"sports","venue":"Sitara Indoor Sports Complex (Gymkhana)","desc":"Smash your way to glory. The ultimate inter-hostel badminton league. ","conflictGroup":"jun10-slot-300pm","urgent":false},{"id":24,"title":"Last1Standing - Task Rush","time":"03:30 PM – 04:30 PM","day":"Jun 10","track":"competition","venue":"KV Ground","desc":"Test your resilience. Only the last one standing wins the points championship. ","conflictGroup":"jun10-slot-330pm","urgent":false},{"id":25,"title":"Anime Jeopardy Initial Rounds (2-3)","time":"04:00 PM – 06:00 PM","day":"Jun 10","track":"competition","venue":"RMN101","desc":"You're not an otaku until you survive Anime Jeopardy! Winning is everything. ","conflictGroup":"jun10-slot-400pm","urgent":false},{"id":26,"title":"Anubhuti Semi Final","time":"04:00 PM – 05:00 PM","day":"Jun 10","track":"competition","venue":"RMN102","desc":"Semi-classical vocal solo competition. Feel the depth of Sur, Taal, and Bhava. ","conflictGroup":"jun10-slot-400pm","urgent":false},{"id":27,"title":"D2D - Workshop","time":"04:00 PM – 05:00 PM","day":"Jun 10","track":"workshop","venue":"UTIL","desc":"The ultimate Dance Showdown. Feel the rhythm, own the stage. ","conflictGroup":"jun10-slot-400pm","urgent":false,"speaker":"Prof. IIT Madras"},{"id":28,"title":"The Hoop Hustle 2.0 - Knockout Round","time":"04:00 PM – 06:00 PM","day":"Jun 10","track":"sports","venue":"Basketball Court (Gymkhana)","desc":"The ultimate basketball knockout challenge. Shoot, score, dominate. ","conflictGroup":"jun10-slot-400pm","urgent":false},{"id":29,"title":"VolleyVibes - Group Stage","time":"04:30 PM – 05:30 PM","day":"Jun 10","track":"sports","venue":"Volleyball Court (Gymkhana) / Court Near Hostel Zone","desc":"Spike it like a pro. The ultimate volleyball trials and final rounds. ","conflictGroup":"jun10-slot-430pm","urgent":false},{"id":30,"title":"Paradox Premier League 3.0 - Trials","time":"04:30 PM – 06:30 PM","day":"Jun 10","track":"sports","venue":"Sangam Ground","desc":"The ultimate cricket tournament. Pitch battles and clean hits. ","conflictGroup":"jun10-slot-430pm","urgent":false},{"id":31,"title":"Sufi Night","time":"07:30 PM – 09:30 PM","day":"Jun 10","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun10-slot-730pm","urgent":false},{"id":32,"title":"The Burn Club - Zumba Workshop","time":"05:00 AM – 06:00 AM","day":"Jun 11","track":"sports","venue":"OAT","desc":"Zumba fitness session. Burn those calories and feel the groove. ","conflictGroup":"jun11-slot-500am","urgent":false},{"id":33,"title":"Kampus Run","time":"05:00 AM – 06:00 AM","day":"Jun 11","track":"sports","venue":"Campus","desc":"The annual marathon run. Test your stamina across the green campus roads. ","conflictGroup":"jun11-slot-500am","urgent":false},{"id":34,"title":"Paradox Premier League 3.0 - Knockouts","time":"06:00 AM – 07:00 AM","day":"Jun 11","track":"sports","venue":"Sangam Ground","desc":"The ultimate cricket tournament. Pitch battles and clean hits. ","conflictGroup":"jun11-slot-600am","urgent":false},{"id":35,"title":"RoboSoccer 5.0 - Semi-finals and Final Rounds","time":"09:00 AM – 11:00 AM","day":"Jun 11","track":"competition","venue":"ICSR Hall 4 (Exhibition Hall)","desc":"Autonomous soccer bots clash. Kick off the AI soccer challenge. ","conflictGroup":"jun11-slot-900am","urgent":false},{"id":36,"title":"Squid Games - Morning Half","time":"09:00 AM – 12:00 PM","day":"Jun 11","track":"sports","venue":"KV Ground","desc":"Survive the thrilling childhood games with a competitive twist. ","conflictGroup":"jun11-slot-900am","urgent":false},{"id":37,"title":"Quotopia - Prelims","time":"10:00 AM – 11:00 AM","day":"Jun 11","track":"competition","venue":"CLT","desc":"The ultimate quiz showdown for trivia masterminds. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":38,"title":"Circuit Design Competition 2.0 - First Round (Simulation)","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RJN101","desc":"Think it. Simulate it. Build it. The ultimate circuit design challenge. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":39,"title":"CrashLab: Collegiate Air Crash Investigation Challenge - Final Round","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"ICSR Hall 2","desc":"Collegiate Air Crash Investigation Challenge. The Devil is in the DATA. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":40,"title":"DSA Triathlon 3.0 - Initial Round","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RJM302","desc":"Data Structures & Algorithms challenge. Code. Optimize. Triumph. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":41,"title":"Manch of Traders - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"ICSR Hall 3","desc":"Where Strategy Meets the Market. The ultimate trading simulation. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":42,"title":"Probably Paradoxical - Round 1 Invigilation","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RJN102","desc":"Probability and statistics problem-solving challenge. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":43,"title":"Python Coding Challenge 5.0 - Round 2 & Final Round","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RJN201","desc":"Python programming contest. The ultimate code quest. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":44,"title":"Research: To Infinity & Beyond - Competition","time":"10:00 AM – 11:00 AM","day":"Jun 11","track":"research","venue":"RJN202","desc":"Research: To Infinity & Beyond. Paper presentations and academic showcase. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":45,"title":"We Found You Online - Round Progression","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"osint","venue":"RJN301","desc":"OSINT challenge. You thought no one noticed! Find the hidden flags. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":46,"title":"Chronos Crossfire - Round Robin Part 2","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"Quark","desc":"Round-robin sports simulation. Experience the thrill of fast-paced sports. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":47,"title":"Ranneeti 5.0 BGMI - Finals 2","time":"10:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"MSB 208 / Chem Dept 204, 205 / DOMS 101","desc":"Ranneeti 5.0 Battlegrounds Mobile India. Drop, loot, survive. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":48,"title":"Paradox Badminton League - Group Stage","time":"10:00 AM – 11:00 AM","day":"Jun 11","track":"sports","venue":"Sitara Indoor Sports Complex (Gymkhana)","desc":"Smash your way to glory. The ultimate inter-hostel badminton league. ","conflictGroup":"jun11-slot-1000am","urgent":false},{"id":49,"title":"Escape Room - Semi Finals","time":"10:30 AM – 12:30 PM","day":"Jun 11","track":"competition","venue":"RMN302","desc":"Solve mind-bending puzzles and escape the room before time runs out. ","conflictGroup":"jun11-slot-1030am","urgent":false},{"id":50,"title":"IPL Auction Showdown 4.0 - Day 2 (Final)","time":"11:00 AM – 12:00 PM","day":"Jun 11","track":"competition","venue":"RMN301 / 202","desc":"Bid smart, build a winning squad, and dominate the auction floor. ","conflictGroup":"jun11-slot-1100am","urgent":false},{"id":51,"title":"Unwind - Vocal","time":"11:30 AM – 12:30 PM","day":"Jun 11","track":"social","venue":"RMN101","desc":"A musical evening of soothing instrumental and vocal acoustic tracks. ","conflictGroup":"jun11-slot-1130am","urgent":false},{"id":52,"title":"Ranneeti 5.0 Pocket Arcade - Stage 1","time":"12:00 PM – 01:00 PM","day":"Jun 11","track":"competition","venue":"RMN201 & 202","desc":"Retro gaming and arcade tournament. Quick games, high scores. ","conflictGroup":"jun11-slot-1200pm","urgent":false},{"id":53,"title":"Pictionary Art Relay","time":"12:00 PM – 01:00 PM","day":"Jun 11","track":"competition","venue":"RMN102 (Biggest classroom)","desc":"Draw fast, guess faster! The ultimate team art relay. ","conflictGroup":"jun11-slot-1200pm","urgent":false},{"id":54,"title":"Ranneeti 5.0 Valorant - Quarter-Finals","time":"02:00 PM – 04:00 PM","day":"Jun 11","track":"competition","venue":"MSB 208 / Chem Dept 204, 205 / DOMS 101","desc":"Ranneeti Valorant 5v5 tactical shooter showdown. ","conflictGroup":"jun11-slot-200pm","urgent":false},{"id":55,"title":"Stand Up Comedy Showdown","time":"02:00 PM – 03:00 PM","day":"Jun 11","track":"social","venue":"CLT","desc":"Get ready to laugh your heart out in the ultimate standup comedy showdown. ","conflictGroup":"jun11-slot-200pm","urgent":false},{"id":56,"title":"Anime Jeopardy Final Rounds (4-5)","time":"02:30 PM – 04:30 PM","day":"Jun 11","track":"competition","venue":"RMN (Least priority)","desc":"You're not an otaku until you survive Anime Jeopardy! Winning is everything. ","conflictGroup":"jun11-slot-230pm","urgent":false},{"id":57,"title":"Sprintsaga - Shot Put, Discus Throw","time":"03:00 PM – 04:00 PM","day":"Jun 11","track":"sports","venue":"KV Ground","desc":"Track and field athletics. Test your speed in 100m, 400m, and relays. ","conflictGroup":"jun11-slot-300pm","urgent":false},{"id":58,"title":"Squid Games - Evening Half","time":"03:00 PM – 06:00 PM","day":"Jun 11","track":"sports","venue":"KV Ground","desc":"Survive the thrilling childhood games with a competitive twist. ","conflictGroup":"jun11-slot-300pm","urgent":false},{"id":59,"title":"Paradox Premier League 3.0 - Knockouts","time":"03:30 PM – 04:30 PM","day":"Jun 11","track":"sports","venue":"Sangam Ground","desc":"The ultimate cricket tournament. Pitch battles and clean hits. ","conflictGroup":"jun11-slot-330pm","urgent":false},{"id":60,"title":"The Hoop Hustle 2.0 - Men's Quarter & Semi Final, Women's Finals","time":"03:30 PM – 05:30 PM","day":"Jun 11","track":"sports","venue":"Basketball Court (Gymkhana)","desc":"The ultimate basketball knockout challenge. Shoot, score, dominate. ","conflictGroup":"jun11-slot-330pm","urgent":false},{"id":61,"title":"Paradox Champions League - Group Stage","time":"03:30 PM – 04:30 PM","day":"Jun 11","track":"sports","venue":"Football Ground (Gymkhana)","desc":"Collegiate football championship. The ultimate battle on the green turf. ","conflictGroup":"jun11-slot-330pm","urgent":false},{"id":62,"title":"VolleyVibes - Semi-Finals","time":"04:00 PM – 06:00 PM","day":"Jun 11","track":"sports","venue":"Volleyball Court (Gymkhana) / Court Near Hostel Zone","desc":"Spike it like a pro. The ultimate volleyball trials and final rounds. ","conflictGroup":"jun11-slot-400pm","urgent":false},{"id":63,"title":"Sach, Scroll aur Shuturmurg Street Play","time":"05:00 PM – 06:00 PM","day":"Jun 11","track":"social","venue":"Outside SAC","desc":"Paradox 2026 social session at the Outside SAC.","conflictGroup":"jun11-slot-500pm","urgent":false},{"id":64,"title":"DJ Night","time":"07:00 PM – 09:00 PM","day":"Jun 11","track":"social","venue":"OAT","desc":"Paradox 2026 social session at the OAT.","conflictGroup":"jun11-slot-700pm","urgent":false},{"id":65,"title":"Sprintsaga - Relays","time":"06:00 AM – 07:00 AM","day":"Jun 12","track":"sports","venue":"Manohar C Watsa Stadium","desc":"Track and field athletics. Test your speed in 100m, 400m, and relays. ","conflictGroup":"jun12-slot-600am","urgent":false},{"id":66,"title":"Paradox Premier League 3.0 - Super Knockouts","time":"06:30 AM – 07:30 AM","day":"Jun 12","track":"sports","venue":"Sangam Ground","desc":"The ultimate cricket tournament. Pitch battles and clean hits. ","conflictGroup":"jun12-slot-630am","urgent":false},{"id":67,"title":"Paradox Champions League - Semi-Finals","time":"07:00 AM – 09:00 AM","day":"Jun 12","track":"sports","venue":"Football Ground (Gymkhana)","desc":"Collegiate football championship. The ultimate battle on the green turf. ","conflictGroup":"jun12-slot-700am","urgent":false},{"id":68,"title":"Last1Standing - Dual Challenge","time":"08:00 AM – 09:00 AM","day":"Jun 12","track":"competition","venue":"KV Ground","desc":"Test your resilience. Only the last one standing wins the points championship. ","conflictGroup":"jun12-slot-800am","urgent":false},{"id":69,"title":"RoboSoccer 5.0 - Final Round (ext) + Free Play","time":"09:00 AM – 11:00 AM","day":"Jun 12","track":"competition","venue":"ICSR Hall 4 (Exhibition Hall)","desc":"Autonomous soccer bots clash. Kick off the AI soccer challenge. ","conflictGroup":"jun12-slot-900am","urgent":false},{"id":70,"title":"Chronos Crossfire - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 12","track":"competition","venue":"Quark","desc":"Round-robin sports simulation. Experience the thrill of fast-paced sports. ","conflictGroup":"jun12-slot-1000am","urgent":false},{"id":71,"title":"Paradox Badminton League - Semi-Finals","time":"10:00 AM – 12:00 PM","day":"Jun 12","track":"sports","venue":"Sitara Indoor Sports Complex (Gymkhana)","desc":"Smash your way to glory. The ultimate inter-hostel badminton league. ","conflictGroup":"jun12-slot-1000am","urgent":false},{"id":72,"title":"Interaction Session with Professors","time":"10:00 AM – 11:00 AM","day":"Jun 12","track":"workshop","venue":"CLT","desc":"Paradox 2026 workshop session at the CLT.","conflictGroup":"jun12-slot-1000am","urgent":false,"speaker":"Prof. IIT Madras"},{"id":73,"title":"Escape Room - Finals","time":"10:30 AM – 12:30 PM","day":"Jun 12","track":"competition","venue":"UTIL","desc":"Solve mind-bending puzzles and escape the room before time runs out. ","conflictGroup":"jun12-slot-1030am","urgent":false},{"id":74,"title":"Last1Standing - Steal or No Steal","time":"11:00 AM – 12:00 PM","day":"Jun 12","track":"competition","venue":"RMN102","desc":"Test your resilience. Only the last one standing wins the points championship. ","conflictGroup":"jun12-slot-1100am","urgent":false},{"id":75,"title":"Circuit Design Competition 2.0 - Final Round (Hardware Demo)","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"Old IE or New IE","desc":"Think it. Simulate it. Build it. The ultimate circuit design challenge. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":76,"title":"DSA Triathlon 3.0 - Final Round","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"ICSR Hall 2","desc":"Data Structures & Algorithms challenge. Code. Optimize. Triumph. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":77,"title":"Echo//Prometheus - Investigation Rounds","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"Campus","desc":"Twelve sleuths. Four destinations. One answer. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":78,"title":"Probably Paradoxical - Final Round","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"RJN102","desc":"Probability and statistics problem-solving challenge. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":79,"title":"We Found You Online - Round Progression","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"osint","venue":"RJN101","desc":"OSINT challenge. You thought no one noticed! Find the hidden flags. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":80,"title":"Final Lap: Formula Racing - Round Progression","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"Not Specified","desc":"Formula racing coding challenge. Accelerate your logic. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":81,"title":"GadgetXpo 2.0 - Finals","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"RJN201","desc":"Showcase of innovative gadgets, tech systems, and hardware hacks. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":82,"title":"RopeWalker - Round Progression","time":"12:30 PM – 02:30 PM","day":"Jun 12","track":"competition","venue":"Not Specified","desc":"Robot balancing challenge. Navigate the rope without falling. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":83,"title":"Capitol Conclave - Finale","time":"12:30 PM – 03:30 PM","day":"Jun 12","track":"competition","venue":"RMN201","desc":"The ultimate parliamentary debate challenge. Speak. Argue. Conquer. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":84,"title":"Youth Parliament - Finale","time":"12:30 PM – 01:30 PM","day":"Jun 12","track":"social","venue":"DOMS101 (Tentative)","desc":"A mock simulation of India's parliamentary debates and policy framing. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":85,"title":"Anubhuti - Finale","time":"12:30 PM – 01:30 PM","day":"Jun 12","track":"competition","venue":"RMN202","desc":"Semi-classical vocal solo competition. Feel the depth of Sur, Taal, and Bhava. ","conflictGroup":"jun12-slot-1230pm","urgent":false},{"id":86,"title":"Ranneeti 5.0 Pocket Arcade - Stage 2","time":"01:00 PM – 02:00 PM","day":"Jun 12","track":"competition","venue":"RMN102","desc":"Retro gaming and arcade tournament. Quick games, high scores. ","conflictGroup":"jun12-slot-100pm","urgent":false},{"id":87,"title":"Research: To Infinity & Beyond - Guest Session","time":"02:00 PM – 03:00 PM","day":"Jun 12","track":"research","venue":"ICSR Hall 3","desc":"Research: To Infinity & Beyond. Paper presentations and academic showcase. ","conflictGroup":"jun12-slot-200pm","urgent":false},{"id":88,"title":"GoBoxd","time":"02:00 PM – 03:00 PM","day":"Jun 12","track":"competition","venue":"RJN201","desc":"Compassion-a-thon: Build tech MVPs for real-world social impact. ","conflictGroup":"jun12-slot-200pm","urgent":false},{"id":89,"title":"Quotopia - Finale","time":"02:30 PM – 03:30 PM","day":"Jun 12","track":"competition","venue":"RMN201","desc":"The ultimate quiz showdown for trivia masterminds. ","conflictGroup":"jun12-slot-230pm","urgent":false},{"id":90,"title":"Sach, Scroll aur Shuturmurg Street Play","time":"03:00 PM – 04:00 PM","day":"Jun 12","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun12-slot-300pm","urgent":false},{"id":91,"title":"Ranneeti 5.0 Valorant - Semi-Finals","time":"04:00 PM – 06:00 PM","day":"Jun 12","track":"competition","venue":"RMN101","desc":"Ranneeti Valorant 5v5 tactical shooter showdown. ","conflictGroup":"jun12-slot-400pm","urgent":false},{"id":92,"title":"D2D SDB + Flash Mob","time":"05:00 PM – 06:00 PM","day":"Jun 12","track":"social","venue":"Himalaya Lawn","desc":"The ultimate Dance Showdown. Feel the rhythm, own the stage. ","conflictGroup":"jun12-slot-500pm","urgent":false},{"id":93,"title":"The Hoop Hustle 2.0 - Men's Finals","time":"05:00 PM – 07:00 PM","day":"Jun 12","track":"sports","venue":"Basketball Court (Gymkhana)","desc":"The ultimate basketball knockout challenge. Shoot, score, dominate. ","conflictGroup":"jun12-slot-500pm","urgent":false},{"id":94,"title":"Paradox Premier League 3.0 - Eliminators","time":"05:00 PM – 06:00 PM","day":"Jun 12","track":"sports","venue":"Sangam Ground","desc":"The ultimate cricket tournament. Pitch battles and clean hits. ","conflictGroup":"jun12-slot-500pm","urgent":false},{"id":95,"title":"VolleyVibes - Finals","time":"05:00 PM – 07:00 PM","day":"Jun 12","track":"sports","venue":"Volleyball Court (Gymkhana) / Court Near Hostel Zone","desc":"Spike it like a pro. The ultimate volleyball trials and final rounds. ","conflictGroup":"jun12-slot-500pm","urgent":false},{"id":96,"title":"Unwind - Finale","time":"07:00 PM – 08:00 PM","day":"Jun 12","track":"social","venue":"OAT","desc":"A musical evening of soothing instrumental and vocal acoustic tracks. ","conflictGroup":"jun12-slot-700pm","urgent":false},{"id":97,"title":"Paradox Premier League 3.0 - PPL CricQueens","time":"07:00 AM – 08:00 AM","day":"Jun 13","track":"sports","venue":"Sangam Ground","desc":"The ultimate cricket tournament. Pitch battles and clean hits. ","conflictGroup":"jun13-slot-700am","urgent":false},{"id":98,"title":"Paradox Champions League - Finals","time":"07:00 AM – 09:00 AM","day":"Jun 13","track":"sports","venue":"Football Ground (Gymkhana)","desc":"Collegiate football championship. The ultimate battle on the green turf. ","conflictGroup":"jun13-slot-700am","urgent":false},{"id":99,"title":"Echo//Prometheus - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"competition","venue":"Campus","desc":"Twelve sleuths. Four destinations. One answer. ","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":100,"title":"We Found You Online - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"osint","venue":"RJM101","desc":"OSINT challenge. You thought no one noticed! Find the hidden flags. ","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":101,"title":"Last1Standing - Points Championship","time":"10:00 AM – 11:00 AM","day":"Jun 13","track":"sports","venue":"RMN201","desc":"Test your resilience. Only the last one standing wins the points championship. ","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":102,"title":"Paradox Badminton League - Finals","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"sports","venue":"Sitara Indoor Sports Complex (Gymkhana)","desc":"Smash your way to glory. The ultimate inter-hostel badminton league. ","conflictGroup":"jun13-slot-1000am","urgent":false},{"id":103,"title":"Paradox Got Talent - Finale","time":"11:00 AM – 12:00 PM","day":"Jun 13","track":"social","venue":"CLT","desc":"Unleash your passion. Showcase your unique talent to the world. ","conflictGroup":"jun13-slot-1100am","urgent":false},{"id":104,"title":"Shutter Safari","time":"11:30 AM – 12:30 PM","day":"Jun 13","track":"competition","venue":"RMN102","desc":"The photography expedition. Capture the raw beauty of campus life. ","conflictGroup":"jun13-slot-1130am","urgent":false},{"id":105,"title":"Ranneeti 5.0 Pocket Arcade - Stage 3 (Final)","time":"01:00 PM – 02:00 PM","day":"Jun 13","track":"competition","venue":"RMN101","desc":"Retro gaming and arcade tournament. Quick games, high scores. ","conflictGroup":"jun13-slot-100pm","urgent":false},{"id":106,"title":"D2D","time":"02:00 PM – 03:00 PM","day":"Jun 13","track":"workshop","venue":"SAC","desc":"The ultimate Dance Showdown. Feel the rhythm, own the stage. ","conflictGroup":"jun13-slot-200pm","urgent":false,"speaker":"Prof. IIT Madras"},{"id":107,"title":"Escape Room - Pitching Round","time":"02:30 PM – 04:30 PM","day":"Jun 13","track":"competition","venue":"ICSR Hall 3","desc":"Solve mind-bending puzzles and escape the room before time runs out. ","conflictGroup":"jun13-slot-230pm","urgent":false},{"id":108,"title":"Ranneeti 5.0 Valorant - Finals","time":"03:00 PM – 05:00 PM","day":"Jun 13","track":"competition","venue":"RMN201","desc":"Ranneeti Valorant 5v5 tactical shooter showdown. ","conflictGroup":"jun13-slot-300pm","urgent":false},{"id":109,"title":"Paradox Premier League 3.0 - Finals","time":"05:00 PM – 07:00 PM","day":"Jun 13","track":"sports","venue":"Sangam Ground","desc":"The ultimate cricket tournament. Pitch battles and clean hits. ","conflictGroup":"jun13-slot-500pm","urgent":false},{"id":110,"title":"Mr & Mrs Paradox","time":"05:00 PM – 06:00 PM","day":"Jun 13","track":"social","venue":"SAC","desc":"Style, grace, and intelligence. The ultimate pageant of IIT Madras. ","conflictGroup":"jun13-slot-500pm","urgent":false},{"id":111,"title":"Rapadox","time":"07:00 PM – 08:00 PM","day":"Jun 13","track":"social","venue":"Himalaya Lawn","desc":"The ultimate rap battle. Spit bars and claim the crown. ","conflictGroup":"jun13-slot-700pm","urgent":false},{"id":112,"title":"Closing Ceremony","time":"02:00 PM – 03:00 PM","day":"Jun 14","track":"social","venue":"SAC","desc":"Paradox 2026 social session at the SAC.","conflictGroup":"jun14-slot-200pm","urgent":false},{"id":113,"title":"Chromatix - Showcase","time":"02:00 PM – 03:00 PM","day":"Jun 14","track":"social","venue":"SAC","desc":"A colorful showcase of digital art and creative coding. ","conflictGroup":"jun14-slot-200pm","urgent":false},{"id":114,"title":"Representation Learning in Biology: Biomolecular Embeddings","time":"02:00 PM – 04:00 PM","day":"Jun 10","track":"workshop","venue":"Wadhwani School of AI","desc":"Explores transforming biological entities (DNA, proteins, disease states) into numerical vector representations (embeddings) using state-of-the-art models like ESM and DNABERT for tasks like protein function prediction. A laptop is required for the practical coding component.","conflictGroup":"jun10-slot-200pm","urgent":false,"speaker":"Prof. Manikandan Narayanan (IIT Madras), Saish Jaiswal (PHD Researcher IITM)"},{"id":115,"title":"From Syntax to Sentience: Classical NLP to LLMs","time":"02:00 PM – 04:00 PM","day":"Jun 10","track":"workshop","venue":"IC&SR Complex","desc":"An intensive workshop tracing the evolution of Natural Language Processing (NLP), starting from text processing and linguistic foundations, moving through the \"Attention\" mechanism, and concluding with the architecture and fine-tuning of state-of-the-art LLMs.","conflictGroup":"jun10-slot-200pm","urgent":false,"speaker":"Manojkumar Khara (Course Instructor IITM BS)"},{"id":116,"title":"Optimisation in Machine Learning","time":"02:00 PM – 04:00 PM","day":"Jun 11","track":"workshop","venue":"Wadhwani School of AI","desc":"Covers optimisation over high-dimensional continuous variables, exploring constrained/unconstrained problems and zeroth/first/second order methods. Focuses on novel algorithms like gradient descent with momentum, adaptive gradient descent, and MuON.","conflictGroup":"jun11-slot-200pm","urgent":false,"speaker":"Harish Guruprasad Ramaswamy (Assistant professor DSAI, IIT Madras)"},{"id":117,"title":"From Chatbots to Autonomous Agents","time":"02:00 PM – 04:00 PM","day":"Jun 11","track":"workshop","venue":"Department of Management Studies","desc":"Provides a glimpse into the evolution from prompt-based AI to autonomous systems that possess the ability to reason, plan, execute, and collaborate, defining the next operating system of work.","conflictGroup":"jun11-slot-200pm","urgent":false,"speaker":"Shabareesh Raj (Co-Founder & Chief AI Officer, sash.ai)"},{"id":118,"title":"AI-Powered Precision Health at Scale","time":"10:00 AM – 12:00 PM","day":"Jun 12","track":"workshop","venue":"Department of Biotechnology","desc":"Discusses building a unified AI-first framework that integrates multimodal sensing, advanced analytics, digital twins, and scalable computational platforms to enable precision health at a population scale, with examples from precision oncology.","conflictGroup":"jun12-slot-1000am","urgent":false,"speaker":"Dr. Naveen Sivadasan (Principal Scientist TCS Research)"},{"id":119,"title":"Context is the New Compute: Engineering Retrieval Systems","time":"10:00 AM – 12:00 PM","day":"Jun 12","track":"workshop","venue":"IC&SR Complex","desc":"Moves beyond basic Retrieval-Augmented Generation (RAG) to discuss designing production-ready context layers that combine vector search, knowledge graphs, and structured retrieval, and how to rigorously evaluate retrieval quality.","conflictGroup":"jun12-slot-1000am","urgent":false,"speaker":"Balasubramanian Chandran (Product & Engineering Leader, Prodapt)"},{"id":120,"title":"Playing with AI - Autonomous Agentic Systems 101","time":"02:00 PM – 04:00 PM","day":"Jun 12","track":"workshop","venue":"Wadhwani School of AI","desc":"Covers the basics of building clean, reliable systems that leverage both AI and traditional code to (almost) fully autonomously perform tasks and build production-grade code, focusing on reducing AI unpredictability.","conflictGroup":"jun12-slot-200pm","urgent":false,"speaker":"Rishav Thakker (software architect and developer)"},{"id":121,"title":"Sports Analytics & AI Workshop","time":"02:00 PM – 04:00 PM","day":"Jun 12","track":"workshop","venue":"Student Activity Center","desc":"An interactive session on the rapidly growing intersection of sports, AI, and data science. It showcases how technologies like Computer Vision, Machine Learning, and IoT sensors are transforming athletic performance analysis and strategy optimization.","conflictGroup":"jun12-slot-200pm","urgent":false,"speaker":"Babji Srinivasan (Professor, IIT Madras)"},{"id":122,"title":"Beyond Next-Token Prediction in Multimodal AI Models","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"workshop","venue":"Wadhwani School of AI","desc":"Discusses the limits of multimodal LLMs in abstraction and reliable reasoning. Motivates moving AI beyond opaque prediction toward concepts, structure, logic, and compositional reasoning to build reliable and trustworthy models.","conflictGroup":"jun13-slot-1000am","urgent":false,"speaker":"Vineeth N Balasubramanian (Microsoft Research India and IIT-Hyderabad)"},{"id":123,"title":"Five Mistakes Data Scientists Make & How Economics Fixes Them","time":"10:00 AM – 12:00 PM","day":"Jun 13","track":"workshop","venue":"Department of Management Studies","desc":"Examines five common mistakes data scientists make (e.g., mistaking correlation for causation, ignoring incentives). Shows how core economic ideas help turn predictive models into better, strategy-aware decisions in business and public policy.","conflictGroup":"jun13-slot-1000am","urgent":false,"speaker":"Prof. Vimal Kumar (Professor, IIT Kanpur)"},{"id":124,"title":"Data Science with Coding Agents: Masterclass on SLMs","time":"02:00 PM – 04:00 PM","day":"Jun 13","track":"workshop","venue":"Wadhwani School of AI","desc":"A masterclass tailored for the IIT Madras Online BSc community on architecting, training, and optimizing Small Language Models (SLMs). Focuses on building high-performance, cost-effective models designed for local/on-device deployment.","conflictGroup":"jun13-slot-200pm","urgent":false,"speaker":"Ashish Tendulkar (AI Practice Manager, Google)"},{"id":125,"title":"Why Most AI Systems Fail and How to Build Ones That Don't","time":"02:00 PM – 04:00 PM","day":"Jun 13","track":"workshop","venue":"IC&SR Complex","desc":"A deep dive into why many AI systems fail in real-world scenarios. The session introduces a systems-first perspective on designing reliable AI that moves beyond simple retrieval to true understanding, often using hybrid architectures.","conflictGroup":"jun13-slot-200pm","urgent":false,"speaker":"Sheri Chander (AI Engineering Head, Newgen Software)"}]};
 let EVENTS = [];
 
 async function loadEventsData() {
@@ -169,6 +170,9 @@ const TRACK_LABELS = {
 };
 
 // Client state model
+const nowReal = new Date();
+const isRealEventRange = (nowReal.getFullYear() === 2026 && nowReal.getMonth() === 5 && nowReal.getDate() >= 9 && nowReal.getDate() <= 14);
+
 let state = {
   booked: [],
   watching: [],
@@ -187,13 +191,19 @@ let state = {
     walkSpeed: 80,
     mapZoom: 15,
     viewMode: "detail",
-    simulateTime: false,
+    simulateTime: !isRealEventRange, // Default to true if outside event dates, false if in-range
     mapMode: "offline",
     notificationsEnabled: false
   },
   hiddenEvents: [],
   notes: {},
-  dismissedNotifications: []
+  dismissedNotifications: [],
+  profile: {
+    name: "Alex Mercer",
+    role: "Senior Data Architect",
+    isPro: true,
+    isSpeaker: true
+  }
 };
 
 // Load state from local storage cache
@@ -208,6 +218,7 @@ try {
     if (saved.hiddenEvents) state.hiddenEvents = saved.hiddenEvents;
     if (saved.notes) state.notes = saved.notes;
     if (saved.dismissedNotifications) state.dismissedNotifications = saved.dismissedNotifications;
+    if (saved.profile) state.profile = { ...state.profile, ...saved.profile };
   }
 } catch(e) {
   console.warn("Storage restore error:", e);
@@ -223,7 +234,8 @@ function saveState() {
       settings: state.settings,
       hiddenEvents: state.hiddenEvents,
       notes: state.notes,
-      dismissedNotifications: state.dismissedNotifications
+      dismissedNotifications: state.dismissedNotifications,
+      profile: state.profile
     }));
   } catch(e) {
     console.warn("Storage save error:", e);
@@ -490,6 +502,24 @@ function onMapPinClick(venueKey) {
   }
 }
 
+// Amenities toggle logic
+function toggleMapAmenity(type, chipEl) {
+  const pins = document.querySelectorAll(`.amenity-pin.${type}`);
+  if (pins.length === 0) return;
+  const isShowing = pins[0].style.display !== "none";
+  
+  pins.forEach(pin => {
+    pin.style.display = isShowing ? "none" : "block";
+  });
+  
+  if (chipEl) {
+    chipEl.classList.toggle("active", !isShowing);
+  }
+  
+  triggerToast(isShowing ? `Hiding ${type} pins` : `Showing ${type} nearby 📍`);
+}
+
+
 // Zoom / Center floating buttons
 function zoomMapBtn(factor) {
   const mapWrapper = document.getElementById("svg-map-wrapper");
@@ -629,10 +659,30 @@ function showEventDetails(evId) {
   // Date string fix: the date line in mockup is e.g. "Jun 12, 2026 • 10:00 AM – 12:00 PM"
   const dateLine = `${ev.day || "Jun 10"}, 2026 • ${timeText}`;
   
-  // Generate speaker info (mock speaker data, or from event if it exists)
-  const speakerName = ev.speaker || "Alex Mercer";
-  const speakerRole = ev.speakerRole || "Senior Architect";
-  const speakerAvatar = ev.speakerAvatar || "img/events/culturals/mr-and-ms-paradox.webp";
+  // Render Speaker card only if track is workshop
+  let speakerHTML = "";
+  if (trackText === "workshop" && ev.speaker) {
+    const speakerName = ev.speaker;
+    const speakerRole = ev.speakerRole || "Guest Speaker";
+    const speakerAvatar = ev.speakerAvatar || "img/events/culturals/mr-and-ms-paradox.webp";
+    speakerHTML = `
+      <div class="details-section-card glass-card">
+        <div class="details-section-title">SPEAKER</div>
+        <div class="speaker-row">
+          <div class="speaker-avatar">
+            <img src="${speakerAvatar}" alt="${speakerName}" style="width:100%; height:100%; border-radius:50%" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22><circle cx=%2222%22 cy=%2222%22 r=%2222%22 fill=%22%23e8dfc8%22/><text x=%2222%22 y=%2227%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%234a3f28%22>${speakerName.substring(0,2).toUpperCase()}</text></svg>';">
+          </div>
+          <div class="speaker-info">
+            <div class="speaker-name">${speakerName}</div>
+            <div class="speaker-role">${speakerRole}</div>
+          </div>
+          <a class="speaker-link" href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <i class="ti ti-external-link"></i>
+          </a>
+        </div>
+      </div>
+    `;
+  }
   
   container.innerHTML = `
     <div class="details-badge-wrap">
@@ -641,31 +691,26 @@ function showEventDetails(evId) {
     <div class="details-title">${ev.title || "Untitled Event"}</div>
     <div class="details-date-line">${dateLine}</div>
     
-    <button class="add-to-calendar-btn" onclick="toggleBooking('${ev.id}', event); setTimeout(() => showEventDetails('${ev.id}'), 100);">
-      <i class="ti ti-calendar-plus" style="font-size:18px"></i>
-      <span>${isBooked ? "Remove from Schedule" : "Add to Calendar"}</span>
-    </button>
+    <div class="details-actions-row">
+      <button class="add-to-calendar-btn" onclick="toggleBooking('${ev.id}', event); setTimeout(() => showEventDetails('${ev.id}'), 100);">
+        <i class="ti ti-calendar-plus" style="font-size:18px"></i>
+        <span>${isBooked ? "Cancel Participation" : "Participate"}</span>
+      </button>
+      <button class="add-to-watchlist-btn ${isWatching ? 'watched' : ''}" onclick="toggleWatchlist('${ev.id}', event); setTimeout(() => showEventDetails('${ev.id}'), 100);" aria-label="Toggle Watchlist">
+        <i class="ti ${isWatching ? 'ti-bookmark-off' : 'ti-bookmark'}" style="font-size:22px"></i>
+      </button>
+    </div>
     
     <div class="details-section-card glass-card">
       <div class="details-section-title">ABOUT THIS SESSION</div>
+      ${coverPath ? `
+      <div class="details-cover-container" onclick="openCoverLightbox('${coverPath}', '${(ev.title || '').replace(/'/g, "\\'")}')">
+        <img class="details-cover-img" src="${coverPath}" alt="${ev.title || 'Cover'}">
+      </div>` : ''}
       <div class="details-section-text">${descText}</div>
     </div>
     
-    <div class="details-section-card glass-card">
-      <div class="details-section-title">SPEAKER</div>
-      <div class="speaker-row">
-        <div class="speaker-avatar">
-          <img src="${speakerAvatar}" alt="${speakerName}" style="width:100%; height:100%; border-radius:50%" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22><circle cx=%2222%22 cy=%2222%22 r=%2222%22 fill=%22%23e8dfc8%22/><text x=%2222%22 y=%2227%22 font-family=%22sans-serif%22 font-size=%2214%22 text-anchor=%22middle%22 fill=%22%234a3f28%22>${speakerName.substring(0,2).toUpperCase()}</text></svg>';">
-        </div>
-        <div class="speaker-info">
-          <div class="speaker-name">${speakerName}</div>
-          <div class="speaker-role">${speakerRole}</div>
-        </div>
-        <a class="speaker-link" href="https://github.com" target="_blank" rel="noopener noreferrer">
-          <i class="ti ti-external-link"></i>
-        </a>
-      </div>
-    </div>
+    ${speakerHTML}
   `;
   
   switchView('details');
@@ -742,7 +787,7 @@ function createEventCardElement(ev, index) {
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueText + ", IIT Madras, Chennai")}`;
 
   card.innerHTML = `
-    <div class="swipe-overlay swipe-added">Booked ✓</div>
+    <div class="swipe-overlay swipe-added">Participating ✓</div>
 
     <div class="event-card-header">
       <span class="event-time"><i class="ti ti-clock" style="font-size:10px;vertical-align:-1px;margin-right:2px"></i>${ev.day || "Day TBA"} · ${timeText}</span>
@@ -780,8 +825,8 @@ function createEventCardElement(ev, index) {
           <div class="event-actions">
             ${isCustom ? `<button class="action-pill" onclick="deleteCustomEvent('${ev.id}', event)" style="color:var(--red); border-color:var(--red); padding:6px 10px;"><i class="ti ti-trash" style="font-size:11px" aria-hidden="true"></i></button>` : ""}
             ${venueText !== "Remote" ? `<button class="action-pill" style="border-color:var(--primary); color:var(--primary);" onclick="focusMapFromCard('${venueText.replace(/'/g, "\\'")}', event)"><i class="ti ti-map-2" style="font-size:11px;margin-right:2px" aria-hidden="true"></i>Map</button>` : ""}
-            <button class="action-pill ${isWatching ? "watched" : "watch"}" onclick="toggleWatchlist('${ev.id}', event)">${isWatching ? "Watching" : "Watch"}</button>
-            <button class="action-pill ${isBooked ? "booked" : "book"}" onclick="toggleBooking('${ev.id}', event)">${isBooked ? "Booked" : "Book"}</button>
+            <button class="action-pill ${isWatching ? "watched" : "watch"}" onclick="toggleWatchlist('${ev.id}', event)">${isWatching ? "Watchlist" : "Interested"}</button>
+            <button class="action-pill ${isBooked ? "booked" : "book"}" onclick="toggleBooking('${ev.id}', event)">${isBooked ? "Participating" : "Participate"}</button>
           </div>
         </div>
       </div>
@@ -1043,6 +1088,42 @@ function renderScheduleView(allEvents, days, day) {
 }
 
 function renderProfileView(allEvents) {
+  const displayName = document.getElementById("profile-display-name");
+  const displayRole = document.getElementById("profile-display-role");
+  const displayBadgePro = document.getElementById("profile-display-badge-pro");
+  const displayBadgeSpeaker = document.getElementById("profile-display-badge-speaker");
+
+  if (displayName) displayName.textContent = state.profile.name;
+  if (displayRole) displayRole.textContent = state.profile.role;
+  if (displayBadgePro) displayBadgePro.style.display = state.profile.isPro ? "inline-block" : "none";
+  if (displayBadgeSpeaker) displayBadgeSpeaker.style.display = state.profile.isSpeaker ? "inline-block" : "none";
+
+  // Clash warnings render
+  const clashWarnings = document.getElementById("profile-clash-warnings");
+  if (clashWarnings) {
+    if (state.conflicts && state.conflicts.length > 0) {
+      clashWarnings.style.display = "block";
+      clashWarnings.innerHTML = `
+        <div class="urgent-banner critical" style="background: #fcebeb; border: 1.5px solid #f09595; color: #791f1f; margin-bottom: 12px; padding: 12px; border-radius: 12px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="font-weight: 800; display: flex; align-items: center; gap: 6px; font-size: 14px;">
+            <i class="ti ti-alert-triangle" style="font-size: 18px; color: #c0392b;"></i>
+            <span>Schedule Clash Detected!</span>
+          </div>
+          <div style="font-size: 12px; display: flex; flex-direction: column; gap: 6px;">
+            ${state.conflicts.map(c => `
+              <div style="border-left: 2px solid #c0392b; padding-left: 8px; margin-left: 4px;">
+                ${c.msg}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    } else {
+      clashWarnings.style.display = "none";
+      clashWarnings.innerHTML = "";
+    }
+  }
+
   const bookedList = document.getElementById("profile-booked-list");
   if (bookedList) {
     bookedList.innerHTML = "";
@@ -1051,7 +1132,7 @@ function renderProfileView(allEvents) {
       bookedList.innerHTML = `
         <div class="empty-state" style="padding: 20px 10px;">
           <i class="ti ti-bookmark" aria-hidden="true"></i>
-          <p>Your calendar is empty. Tap "Book" or swipe right on any event.</p>
+          <p>Your participating schedule is empty. Tap "Participate" or swipe right on any event.</p>
         </div>`;
     } else {
       const bookedFragment = document.createDocumentFragment();
@@ -1071,7 +1152,7 @@ function renderProfileView(allEvents) {
       watchList.innerHTML = `
         <div class="empty-state" style="padding: 20px 10px;">
           <i class="ti ti-eye" aria-hidden="true"></i>
-          <p>Your watchlist is empty.</p>
+          <p>Your watchlist (interested events) is empty.</p>
         </div>`;
     } else {
       const watchFragment = document.createDocumentFragment();
@@ -1111,40 +1192,43 @@ function renderDiscoverView(allEvents) {
   
   nextEvents.sort((a, b) => getEventTimeRange(a).start - getEventTimeRange(b).start);
   
-  if (tickerContainer) {
-    tickerContainer.innerHTML = "";
-    if (nowEvents.length === 0 && nextEvents.length === 0) {
-      tickerContainer.innerHTML = `<span class="now-next-title">No events running right now</span>`;
-    } else {
-      const fragment = document.createDocumentFragment();
-      if (nowEvents.length > 0) {
-        const item = document.createElement("div");
-        item.className = "now-next-item";
-        item.innerHTML = `
-          <span class="now-next-label now">NOW</span>
-          <span class="now-next-title" onclick="showEventDetails('${nowEvents[0].id}')">${nowEvents[0].title}</span>
-        `;
-        fragment.appendChild(item);
-      }
-      nextEvents.slice(0, 3).forEach(ev => {
-        const item = document.createElement("div");
-        item.className = "now-next-item";
-        item.innerHTML = `
-          <span class="now-next-label next">NEXT</span>
-          <span class="now-next-title" onclick="showEventDetails('${ev.id}')">${ev.title}</span>
-        `;
-        fragment.appendChild(item);
-      });
-      tickerContainer.appendChild(fragment);
-    }
-  }
+  // Toggle Visibility of Ticker Strip and Now Playing Card
+  const tickerStrip = document.getElementById("ticker-strip");
+  const nowPlayingCard = document.getElementById("now-playing-card");
   
   if (nowEvents.length > 0) {
+    if (tickerStrip) tickerStrip.style.display = "flex";
+    if (nowPlayingCard) nowPlayingCard.style.display = "block";
     if (nowTitle) nowTitle.textContent = nowEvents[0].title;
     if (nowTime) nowTime.textContent = `${nowEvents[0].time} @ ${nowEvents[0].venue}`;
   } else {
+    if (tickerStrip) tickerStrip.style.display = "none";
+    if (nowPlayingCard) nowPlayingCard.style.display = "none";
     if (nowTitle) nowTitle.textContent = "No events live right now";
     if (nowTime) nowTime.textContent = "-- : --";
+  }
+  
+  if (tickerContainer && nowEvents.length > 0) {
+    tickerContainer.innerHTML = "";
+    const fragment = document.createDocumentFragment();
+    const item = document.createElement("div");
+    item.className = "now-next-item";
+    item.innerHTML = `
+      <span class="now-next-label now">NOW</span>
+      <span class="now-next-title" onclick="showEventDetails('${nowEvents[0].id}')">${nowEvents[0].title}</span>
+    `;
+    fragment.appendChild(item);
+    
+    nextEvents.slice(0, 3).forEach(ev => {
+      const item = document.createElement("div");
+      item.className = "now-next-item";
+      item.innerHTML = `
+        <span class="now-next-label next">NEXT</span>
+        <span class="now-next-title" onclick="showEventDetails('${ev.id}')">${ev.title}</span>
+      `;
+      fragment.appendChild(item);
+    });
+    tickerContainer.appendChild(fragment);
   }
   
   if (upNextContainer) {
@@ -1169,15 +1253,57 @@ function renderDiscoverView(allEvents) {
     }
   }
   
+  // Discover Bento Grid horizontal sliding items
   const discoverList = document.getElementById("discover-events-list");
   if (discoverList) {
     discoverList.innerHTML = "";
-    const curated = allEvents.filter(e => !state.hiddenEvents?.includes(e.id)).slice(0, 6);
+    
+    // Filter top 4-5 upcoming events overall
+    let bentoEvents = [...nextEvents];
+    if (bentoEvents.length < 5) {
+      const daysOrder = ["Jun 09", "Jun 10", "Jun 11", "Jun 12", "Jun 13", "Jun 14"];
+      const currentDayIdx = daysOrder.indexOf(currentDayName);
+      
+      let futureEvents = allEvents.filter(e => {
+        const dayIdx = daysOrder.indexOf(e.day);
+        return dayIdx > currentDayIdx && !state.hiddenEvents?.includes(e.id);
+      });
+      
+      futureEvents.sort((a, b) => {
+        const aDayIdx = daysOrder.indexOf(a.day);
+        const bDayIdx = daysOrder.indexOf(b.day);
+        if (aDayIdx !== bDayIdx) return aDayIdx - bDayIdx;
+        return getEventTimeRange(a).start - getEventTimeRange(b).start;
+      });
+      
+      bentoEvents = bentoEvents.concat(futureEvents);
+    }
+    
+    bentoEvents = bentoEvents.slice(0, 5);
+    if (bentoEvents.length === 0) {
+      bentoEvents = allEvents.filter(e => !state.hiddenEvents?.includes(e.id)).slice(0, 5);
+    }
+    
     const fragment = document.createDocumentFragment();
-    curated.forEach((ev, idx) => {
-      const card = createEventCardElement(ev, idx);
-      fragment.appendChild(card);
+    const sizes = ["wide", "tall", "regular", "wide", "tall"];
+    bentoEvents.forEach((ev, idx) => {
+      const bentoCard = createBentoCardElement(ev, sizes[idx % sizes.length], idx);
+      fragment.appendChild(bentoCard);
     });
+    
+    // Append "View All" redirection card
+    const viewAllCard = document.createElement("div");
+    viewAllCard.className = "bento-card view-all-card";
+    viewAllCard.style.animationDelay = `${bentoEvents.length * 60}ms`;
+    viewAllCard.onclick = () => switchView('schedule');
+    viewAllCard.innerHTML = `
+      <div class="view-all-content">
+        <div class="view-all-icon"><i class="ti ti-arrow-right"></i></div>
+        <div class="view-all-text">View All Schedule</div>
+      </div>
+    `;
+    fragment.appendChild(viewAllCard);
+    
     discoverList.appendChild(fragment);
   }
   
@@ -1201,6 +1327,56 @@ function renderDiscoverView(allEvents) {
       browseTabs.appendChild(btn);
     });
   }
+}
+
+function createBentoCardElement(ev, sizeClass, index) {
+  const trackText = (ev.track || "competition").toLowerCase();
+  const badge = TRACK_BADGES[trackText] || "badge-competition";
+  const blabel = TRACK_LABELS[trackText] || trackText;
+  const coverPath = getEventCover(ev.title);
+  const timeText = ev.time || "Time TBA";
+  const venueText = ev.venue || "Venue TBA";
+  
+  const card = document.createElement("div");
+  card.className = `bento-card ${sizeClass}`;
+  card.style.animationDelay = `${index * 60}ms`;
+  card.onclick = () => showEventDetails(ev.id);
+  
+  if (coverPath) {
+    card.style.backgroundImage = `url('${coverPath}')`;
+    card.style.backgroundSize = 'cover';
+    card.style.backgroundPosition = 'center';
+  } else {
+    card.style.background = TRACK_GRADIENTS[trackText] || TRACK_GRADIENTS['competition'];
+  }
+  
+  card.innerHTML = `
+    <div class="bento-card-overlay"></div>
+    <div class="bento-card-header">
+      <span class="discover-badge ${badge}">${blabel}</span>
+    </div>
+    <div class="bento-card-footer">
+      <div class="bento-card-title">${ev.title || "Untitled Event"}</div>
+      <div class="bento-card-meta">
+        <span><i class="ti ti-clock"></i> ${ev.day || "Day"} · ${timeText.split(/[–-]/)[0]}</span>
+        <span><i class="ti ti-map-pin"></i> ${venueText}</span>
+      </div>
+    </div>
+  `;
+  return card;
+}
+
+function onDiscoverSearchInput(val) {
+  switchView('schedule');
+  const schedSearch = document.getElementById("schedule-search");
+  if (schedSearch) {
+    schedSearch.value = val;
+    schedSearch.focus();
+    onSearchInput(val);
+  }
+  // Clear discover input so it's clean for the next return
+  const discSearch = document.getElementById("discover-search");
+  if (discSearch) discSearch.value = "";
 }
 
 function renderConflictsView() {
@@ -1244,12 +1420,12 @@ function toggleBooking(id, e) {
   
   if (state.booked.includes(castId)) {
     state.booked = state.booked.filter(x => x !== castId);
-    triggerToast("Removed event booking.");
-    sendBrowserNotification("Event Removed", `Cancelled booking for: ${titleText}`);
+    triggerToast("Cancelled participation.");
+    sendBrowserNotification("Participation Cancelled", `Cancelled participation for: ${titleText}`);
   } else {
     state.booked.push(castId);
-    triggerToast("Event successfully booked!");
-    sendBrowserNotification("Event Booked", `Successfully booked: ${titleText}`);
+    triggerToast("Participating in event!");
+    sendBrowserNotification("Participating", `Successfully participating in: ${titleText}`);
   }
   
   evaluateConflicts();
@@ -1271,12 +1447,12 @@ function toggleWatchlist(id, e) {
   
   if (state.watching.includes(castId)) {
     state.watching = state.watching.filter(x => x !== castId);
-    triggerToast("Removed from watchlist.");
-    sendBrowserNotification("Watchlist Removed", `Removed from watchlist: ${titleText}`);
+    triggerToast("Removed from interested watchlist.");
+    sendBrowserNotification("Watchlist Removed", `Removed from interested watchlist: ${titleText}`);
   } else {
     state.watching.push(castId);
-    triggerToast("Added to watchlist.");
-    sendBrowserNotification("Watchlist Added", `Added to watchlist: ${titleText}`);
+    triggerToast("Added to interested watchlist.");
+    sendBrowserNotification("Watchlist Added", `Added to interested watchlist: ${titleText}`);
   }
   
   evaluateConflicts();
@@ -1424,18 +1600,6 @@ function switchView(v, keepHistory = true) {
     }
   }
 
-  // Toggle light-nav vs dark-nav on bottom-nav depending on schedule view
-  const bottomNav = document.getElementById('app-bottom-nav');
-  if (bottomNav) {
-    if (v === 'schedule') {
-      bottomNav.classList.remove('light-nav');
-      bottomNav.classList.add('dark-nav');
-    } else {
-      bottomNav.classList.remove('dark-nav');
-      bottomNav.classList.add('light-nav');
-    }
-  }
-
   if (v === 'map') {
     updateMapModeUI();
     setTimeout(() => {
@@ -1444,6 +1608,7 @@ function switchView(v, keepHistory = true) {
         const selectVal = select.value;
         focusMapVenue(selectVal);
       }
+      updateMapRoute();
     }, 100);
   }
 
@@ -1630,6 +1795,46 @@ function syncSettingsUI() {
 
   const notifCheck = document.getElementById("setting-browser-notifications");
   if (notifCheck) notifCheck.checked = !!state.settings.notificationsEnabled;
+}
+
+// Profile details editor controllers
+function openProfileEditor() {
+  const nameInput = document.getElementById("profile-input-name");
+  const roleInput = document.getElementById("profile-input-role");
+  const proCheck = document.getElementById("profile-input-pro");
+  const speakerCheck = document.getElementById("profile-input-speaker");
+
+  if (nameInput) nameInput.value = state.profile.name || "";
+  if (roleInput) roleInput.value = state.profile.role || "";
+  if (proCheck) proCheck.checked = !!state.profile.isPro;
+  if (speakerCheck) speakerCheck.checked = !!state.profile.isSpeaker;
+
+  openModal("profile-setup-modal");
+}
+
+function saveProfileDetails() {
+  const nameInput = document.getElementById("profile-input-name");
+  const roleInput = document.getElementById("profile-input-role");
+  const proCheck = document.getElementById("profile-input-pro");
+  const speakerCheck = document.getElementById("profile-input-speaker");
+
+  if (nameInput && nameInput.value.trim() === "") {
+    triggerToast("Please enter a name");
+    nameInput.focus();
+    return;
+  }
+
+  state.profile.name = nameInput ? nameInput.value.trim() : "Alex Mercer";
+  state.profile.role = roleInput ? roleInput.value.trim() : "Senior Data Architect";
+  state.profile.isPro = proCheck ? proCheck.checked : false;
+  state.profile.isSpeaker = speakerCheck ? speakerCheck.checked : false;
+
+  localStorage.setItem("paradox_profile_initialized", "true");
+  
+  saveState();
+  closeModal("profile-setup-modal");
+  renderUI();
+  triggerToast("Profile updated successfully!");
 }
 
 // OSINT Quiz Simulator Code
@@ -1826,7 +2031,7 @@ function triggerToast(msg) {
 // Custom simulated time provider
 function getNow() {
   if (state.settings && state.settings.simulateTime) {
-    return new Date("2026-06-10T12:45:00");
+    return new Date("2026-06-10T16:30:00");
   }
   return new Date();
 }
@@ -1839,26 +2044,98 @@ function updateSimulateTime(val) {
   evaluateTransitWarnings();
   renderNowNextPanel();
   renderUI();
-  triggerToast(`Simulated time ${val ? "Enabled (Jun 10, 12:45 PM)" : "Disabled (Real Time)"}`);
+  triggerToast(`Simulated time ${val ? "Enabled (Jun 10, 4:30 PM)" : "Disabled (Real Time)"}`);
 }
 
-// View Mode compact/detail toggle
+// View Mode compact/detail toggle (No-op after removing compact layout)
 function toggleCardView() {
-  const body = document.body;
-  const icon = document.getElementById("view-toggle-icon");
-  if (body.classList.contains("compact-mode")) {
-    body.classList.remove("compact-mode");
-    state.settings.viewMode = "detail";
-    if (icon) icon.className = "ti ti-list";
-    triggerToast("View set to Details Mode");
-  } else {
-    body.classList.add("compact-mode");
-    state.settings.viewMode = "compact";
-    if (icon) icon.className = "ti ti-layout-grid";
-    triggerToast("View set to Compact Mode");
-  }
+  state.settings.viewMode = "detail";
   saveState();
-  setTimeout(initSlotObserver, 200);
+}
+
+// Share Application handler
+function shareAppLauncher() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Paradox 2026 Mobile Navigator',
+      text: 'Check out the Paradox 2026 Campus Navigator App!',
+      url: window.location.href
+    }).catch(console.error);
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    triggerToast("Navigator web link copied to clipboard! 📋");
+  }
+}
+
+// Interactive Map Route Calculator & Bezier Path drawer
+function updateMapRoute() {
+  const originSelect = document.getElementById("route-origin");
+  const destSelect = document.getElementById("route-destination");
+  if (!originSelect || !destSelect) return;
+  
+  const originVal = originSelect.value;
+  const destVal = destSelect.value;
+  
+  const posA = VENUES_DB[originVal];
+  const posB = VENUES_DB[destVal];
+  
+  if (!posA || !posB) return;
+  
+  const dx = posB.x - posA.x;
+  const dy = posB.y - posA.y;
+  const distPixel = Math.sqrt(dx*dx + dy*dy);
+  const distMeters = Math.round(distPixel * 2); // 1px = ~2 meters
+  
+  const walkSpeed = state.settings.walkSpeed || 80; // meters per minute
+  const walkTimeMins = distMeters / walkSpeed;
+  const minutes = Math.floor(walkTimeMins);
+  const seconds = Math.round((walkTimeMins - minutes) * 60);
+  
+  const logText = document.getElementById("transit-log-text");
+  if (logText) {
+    logText.textContent = `TRANSIT_LOG: ${distMeters}m / ${minutes}m ${seconds}s`;
+  }
+  
+  const tightPill = document.getElementById("tight-connection-pill");
+  if (tightPill) {
+    // Show tight connection warning if walk is more than 300m / 4 mins
+    tightPill.style.display = (distMeters > 300) ? "inline-flex" : "none";
+  }
+  
+  const svgTransitLine = document.getElementById("svg-transit-line");
+  if (svgTransitLine) {
+    if (originVal === destVal || originVal === "Remote" || destVal === "Remote") {
+      svgTransitLine.style.display = "none";
+    } else {
+      const midX = (posA.x + posB.x) / 2;
+      const midY = (posA.y + posB.y) / 2 - 35; // arc curve control offset
+      svgTransitLine.setAttribute("d", `M ${posA.x} ${posA.y} Q ${midX} ${midY} ${posB.x} ${posB.y}`);
+      svgTransitLine.style.display = "block";
+    }
+  }
+  
+  // Center and scale SVG map viewport to fit both selected points
+  if (originVal !== destVal && originVal !== "Remote" && destVal !== "Remote" && state.settings.mapMode !== "live") {
+    const mapWrapper = document.getElementById("svg-map-wrapper");
+    if (mapWrapper) {
+      const rect = mapWrapper.getBoundingClientRect();
+      const W = rect.width || 388;
+      const H = rect.height || 380;
+      const ratio = W / 1000;
+      
+      const centerX = (posA.x + posB.x) / 2;
+      const centerY = (posA.y + posB.y) / 2;
+      
+      let scale = 1.6;
+      if (distPixel > 10) {
+        scale = Math.min(2.5, Math.max(1.1, (W / (distPixel * 1.5))));
+      }
+      mapScale = scale;
+      mapPanX = (W / 2) - (centerX * ratio * mapScale);
+      mapPanY = (H / 2) - (centerY * ratio * mapScale);
+      updateSVGTransform();
+    }
+  }
 }
 
 // Toggle Time Slot collapsing
@@ -1992,6 +2269,7 @@ function highlightJumpPill(slotId) {
 function renderNowNextPanel() {
   const banner = document.getElementById("now-next-banner");
   const container = document.getElementById("now-next-content");
+  const tickerStrip = document.getElementById("ticker-strip");
   if (!banner || !container) return;
   
   let isDismissed = false;
@@ -2002,6 +2280,7 @@ function renderNowNextPanel() {
   }
   if (isDismissed) {
     banner.style.display = "none";
+    if (tickerStrip) tickerStrip.style.display = "none";
     return;
   }
   
@@ -2010,6 +2289,7 @@ function renderNowNextPanel() {
   
   if (!isEventRange && !state.settings.simulateTime) {
     banner.style.display = "none";
+    if (tickerStrip) tickerStrip.style.display = "none";
     return;
   }
   
@@ -2048,7 +2328,11 @@ function renderNowNextPanel() {
     return;
   }
   
-  banner.style.display = "flex";
+  if (state.activeView === "discover") {
+    banner.style.display = "none";
+  } else {
+    banner.style.display = "flex";
+  }
   container.innerHTML = "";
   
   const createRow = (labelClass, labelText, ev) => {
@@ -2076,7 +2360,10 @@ function dismissNowNext() {
   } catch (err) {
     console.warn("sessionStorage write failed:", err);
   }
-  document.getElementById("now-next-banner").style.display = "none";
+  const banner = document.getElementById("now-next-banner");
+  if (banner) banner.style.display = "none";
+  const tickerStrip = document.getElementById("ticker-strip");
+  if (tickerStrip) tickerStrip.style.display = "none";
   triggerToast("Now & Next banner dismissed for this session.");
 }
 
@@ -2443,21 +2730,7 @@ function getNotificationsList() {
     });
   }
   
-  // 4. Default Broadcast Announcements
-  notices.push({
-    id: "announcement-welcome",
-    type: "info",
-    icon: "ti-speakerphone",
-    title: "Welcome to Paradox 2026",
-    body: "IIT Madras welcomes all selected students to campus. The Opening Ceremony begins Jun 10 at 9:30 AM in the SAC grounds."
-  });
-  notices.push({
-    id: "announcement-zumba",
-    type: "info",
-    icon: "ti-music",
-    title: "Zumba & DJ Sessions Scheduled",
-    body: "Guided zumba is scheduled for Jun 11 at 5:00 AM. DJ Concert goes live on Jun 11 at 7:00 PM at the Open Air Theatre (OAT)."
-  });
+  // 4. Default Broadcast Announcements - Removed broadcast junk to keep the notification center clean
   
   // Filter out dismissed ones
   const dismissed = state.dismissedNotifications || [];
@@ -2743,6 +3016,45 @@ function initSVGMapInteractions() {
   }
 }
 
+// Onboarding completion validation and state persistence
+function completeOnboarding() {
+  const nameInput = document.getElementById("onboard-name");
+  const roleInput = document.getElementById("onboard-role");
+  const proCheck = document.getElementById("onboard-input-pro");
+  const speakerCheck = document.getElementById("onboard-input-speaker");
+
+  if (!nameInput || nameInput.value.trim() === "") {
+    triggerToast("Please enter your name to customize your experience!");
+    if (nameInput) nameInput.focus();
+    return;
+  }
+
+  // Update profile model state
+  state.profile.name = nameInput.value.trim();
+  state.profile.role = roleInput ? roleInput.value.trim() : "General Attendee";
+  state.profile.isPro = proCheck ? proCheck.checked : false;
+  state.profile.isSpeaker = speakerCheck ? speakerCheck.checked : false;
+
+  // Set persistence flags
+  localStorage.setItem("paradox_profile_initialized", "true");
+  localStorage.setItem("paradox_onboarded", "true");
+
+  saveState();
+
+  // Animate and remove onboarding overlay PWA screen
+  const onboardingEl = document.getElementById("onboarding-screen");
+  if (onboardingEl) {
+    onboardingEl.style.opacity = "0";
+    onboardingEl.style.visibility = "hidden";
+    setTimeout(() => {
+      onboardingEl.remove();
+    }, 450);
+  }
+
+  renderUI();
+  triggerToast(`Welcome to Paradox 2026, ${state.profile.name}! 🎉`);
+}
+
 // Bootstrap app
 window.addEventListener("DOMContentLoaded", async () => {
   await loadEventsData();
@@ -2750,19 +3062,31 @@ window.addEventListener("DOMContentLoaded", async () => {
   evaluateConflicts();
   evaluateTransitWarnings();
   
-  // Initialize view Mode class
-  const icon = document.getElementById("view-toggle-icon");
-  if (state.settings.viewMode === "compact") {
-    document.body.classList.add("compact-mode");
-    if (icon) icon.className = "ti ti-layout-grid";
-  } else {
-    document.body.classList.remove("compact-mode");
-    if (icon) icon.className = "ti ti-list";
-  }
+  // Set default view mode details layout
+  state.settings.viewMode = "detail";
+  document.body.classList.remove("compact-mode");
   
   // Initialize SVG Map Interactions & UI state
   updateMapModeUI();
   initSVGMapInteractions();
   
   renderUI();
+
+  // First-run onboarding screen display logic
+  const onboarded = localStorage.getItem("paradox_onboarded") === "true";
+  const onboardingEl = document.getElementById("onboarding-screen");
+  if (onboarded) {
+    if (onboardingEl) onboardingEl.remove();
+  } else {
+    if (onboardingEl) {
+      onboardingEl.style.display = "flex";
+      setTimeout(() => {
+        onboardingEl.style.opacity = "1";
+        onboardingEl.style.visibility = "visible";
+      }, 50);
+    }
+  }
+
+  // Initialize map route panel calculations
+  updateMapRoute();
 });
