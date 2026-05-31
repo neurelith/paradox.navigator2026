@@ -337,7 +337,7 @@ function evaluateTransitWarnings() {
           if (distPixel > 100) { // significant walk
             foundConflict = true;
             const isOvertime = walkTime > timeGap;
-            const gmapsDirectionUrl = `http://googleusercontent.com/maps.google.com/${encodeURIComponent(posA.q)}&destination=${encodeURIComponent(posB.q)}&travelmode=walking`;
+            const gmapsDirectionUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(posA.q)}&destination=${encodeURIComponent(posB.q)}&travelmode=walking`;
             
             if (isOvertime) {
               warningEl.classList.add("critical");
@@ -401,13 +401,13 @@ function focusMapVenue(venueKey, forceLiveUpdate = false) {
     let newSrc = "";
 
     if (venueKey === "Entire_Campus" || !venue.q) {
-      newSrc = `http://googleusercontent.com/maps.google.com/${zoom - 1}&ie=UTF8&iwloc=&output=embed`;
+      newSrc = `https://maps.google.com/maps?q=Indian%20Institute%20of%20Technology%20Madras&t=&z=${zoom - 1}&ie=UTF8&iwloc=&output=embed`;
       label.textContent = "Selected: IITM Campus";
-      navLink.setAttribute("href", "http://googleusercontent.com/maps.google.com/IIT+Madras");
+      navLink.setAttribute("href", "https://www.google.com/maps/search/?api=1&query=IIT+Madras");
     } else {
-      newSrc = `http://googleusercontent.com/maps.google.com/${encodeURIComponent(venue.q)}&t=&z=${zoom}&ie=UTF8&iwloc=&output=embed`;
+      newSrc = `https://maps.google.com/maps?q=${encodeURIComponent(venue.q)}&t=&z=${zoom}&ie=UTF8&iwloc=&output=embed`;
       label.textContent = `Selected: ${venue.name}`;
-      navLink.setAttribute("href", `http://googleusercontent.com/maps.google.com/${encodeURIComponent(venue.q)}`);
+      navLink.setAttribute("href", `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.q)}`);
     }
 
     if (lastLoadedMapSrc !== newSrc || forceLiveUpdate) {
@@ -442,9 +442,9 @@ function focusSVGMapVenue(venueKey) {
   const navLink = document.getElementById("gmaps-external-nav");
   if (navLink) {
     if (venueKey === "Entire_Campus" || !venue.q) {
-      navLink.setAttribute("href", "http://googleusercontent.com/maps.google.com/IIT+Madras");
+      navLink.setAttribute("href", "https://www.google.com/maps/search/?api=1&query=IIT+Madras");
     } else {
-      navLink.setAttribute("href", `http://googleusercontent.com/maps.google.com/${encodeURIComponent(venue.q)}`);
+      navLink.setAttribute("href", `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.q)}`);
     }
   }
 
@@ -609,6 +609,17 @@ function toggleCardExpand(cardEl, evId, e) {
   // Toggle target card expanded class
   if (!isExpanded) {
     cardEl.classList.add('expanded');
+    
+    // Smoothly scroll the card into view below the sticky header and tabs
+    setTimeout(() => {
+      const topOffset = 180;
+      const offsetPosition = getAbsoluteOffsetTop(cardEl) - topOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }, 100);
+
     // Lazy-load cover image on expand
     const coverImg = cardEl.querySelector('.event-cover-img[data-src]');
     if (coverImg && !coverImg.src) {
@@ -691,7 +702,7 @@ function createEventCardElement(ev, index) {
     card.style.setProperty('--card-cover-url', `url('${coverPath}')`);
   }
 
-  const mapsHref = `http://googleusercontent.com/maps.google.com/${encodeURIComponent(venueText + ", IIT Madras, Chennai")}`;
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueText + ", IIT Madras, Chennai")}`;
 
   card.innerHTML = `
     <div class="swipe-overlay swipe-added">Booked ✓</div>
