@@ -12,7 +12,7 @@ The application implements a custom Google Material Design 3 (M3) design system,
 
 You can install the native Android app directly onto your device:
 
-1. **Download the APK**: Download the compiled package ZIP from [GitHub Build Artifacts](https://github.com/neurelith/paradox.navigator2026/actions/runs/26697907543/artifacts/7312202683).
+1. **Download the APK**: Download the compiled package ZIP from [GitHub Build Artifacts](https://github.com/neurelith/paradox.navigator2026/actions/runs/26713730492/artifacts/7317047808).
    *(Note: You must be logged into the owning GitHub account `neurelith` to access this private repository download link).*
 2. **Extract & Open**: Extract the downloaded ZIP folder to get the `app-debug.apk` file, then open/run it on your Android device.
 3. **Allow Installation**: If prompted with a security warning, tap **Settings** and enable **Allow from this source** for your browser or file manager.
