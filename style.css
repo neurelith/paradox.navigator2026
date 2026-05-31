@@ -88,22 +88,22 @@ body {
   font-family: var(--font-body);
   min-height: 100vh;
   min-height: 100dvh;
-  max-width: 420px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
   position: relative;
   overflow-x: hidden;
-  border-left: 1.5px solid var(--border);
-  border-right: 1.5px solid var(--border);
   transition: background var(--transition-fluid), color var(--transition-fluid), border var(--transition-fluid);
   box-shadow: none;
 }
 
-@media (max-width: 420px) {
+@media (min-width: 481px) {
   body {
-    max-width: 100%;
-    border-left: none;
-    border-right: none;
+    max-width: 420px;
+    margin: 0 auto;
+    border-left: 1.5px solid var(--border);
+    border-right: 1.5px solid var(--border);
   }
 }
 
@@ -850,7 +850,7 @@ body[data-theme="dark"] .event-card[data-cover].expanded::after  { opacity: 0.30
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 420px;
+  max-width: 100%;
   background: #ffffff;
   border-top: 1.5px solid var(--border);
   display: flex;
@@ -860,6 +860,12 @@ body[data-theme="dark"] .event-card[data-cover].expanded::after  { opacity: 0.30
   z-index: 100;
   transition: border var(--transition-fluid);
   box-shadow: none;
+}
+
+@media (min-width: 481px) {
+  .bottom-nav {
+    max-width: 420px;
+  }
 }
 
 .bottom-nav.light-nav {
@@ -1007,7 +1013,7 @@ body[data-theme="dark"] .bottom-nav.light-nav .nav-item.active::after {
   background: var(--surface);
   border-radius: 20px 20px 0 0;
   width: 100%;
-  max-width: 420px;
+  max-width: 100%;
   padding: 16px 20px calc(30px + env(safe-area-inset-bottom, 0px));
   border-top: 1.5px solid var(--border);
   transform: translateY(100%);
@@ -1017,6 +1023,12 @@ body[data-theme="dark"] .bottom-nav.light-nav .nav-item.active::after {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   box-shadow: none;
+}
+
+@media (min-width: 481px) {
+  .modal {
+    max-width: 420px;
+  }
 }
 .modal-overlay.open .modal { transform: translateY(0); }
 
@@ -1688,7 +1700,7 @@ body[data-theme="dark"] .toast-msg.conflict {
   background: var(--primary-hover);
 }
 
-@media (min-width: 421px) {
+@media (min-width: 481px) {
   #back-to-top-btn {
     right: calc((100vw - 420px) / 2 + 16px);
   }
